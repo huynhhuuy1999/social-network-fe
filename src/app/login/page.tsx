@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { CardUser } from "./components";
+import { CardAddUser, CardUser } from "./components";
 import React, { useState } from "react";
 
 const Login = () => {
@@ -23,10 +23,11 @@ const Login = () => {
             <span className="text-[#606770] text-[15px] leading-[24px] mb-6 block">
               Click your picture or add an account.
             </span>
-            <div className="flex gap-x-4">
-              {Array.from({ length: 2 }, (k, v) => {
-                return <CardUser key={v} />;
+            <div className="flex gap-x-4 gap-y-3 flex-wrap">
+              {Array.from({ length: 5 }, (k, v) => {
+                return <CardUser key={v} userName="ys-ys" numNotiUnSeen={2} />;
               })}
+              <CardAddUser />
             </div>
           </div>
         ) : (
