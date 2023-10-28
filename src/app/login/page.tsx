@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
-import { CardAddUser, CardUser } from "./components";
+import { CardAddUser, CardUser, FormCreateUser } from "./components";
 import React, { useState } from "react";
+import { Modal } from "@/components";
 
 const Login = () => {
   const [accounts, setAccount] = useState<number[]>([1]);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
   return (
     <div className="flex items-center justify-center bg-[#f0f2f5] h-[100vh] w-full px-[10%]">
       <div className="w-[50%]">
@@ -72,11 +74,18 @@ const Login = () => {
             Forgotten password?
           </span>
           <hr className="w-[100%] h-[1px] bg-[#dddfe2] my-[10px]" />
-          <button className="rounded-[6px] border-none text-[17px] leading-[48px] py-0 px-4 bg-[#42b72a] text-white font-bold my-[10px]">
+          <button
+            onClick={() => setShowModal(true)}
+            className="rounded-[6px] border-none text-[17px] leading-[48px] py-0 px-4 bg-[#42b72a] text-white font-bold my-[10px]"
+          >
             Create new account
           </button>
         </div>
       </div>
+      <FormCreateUser
+        show={showModal}
+        setShow={(value) => setShowModal(value)}
+      />
     </div>
   );
 };
