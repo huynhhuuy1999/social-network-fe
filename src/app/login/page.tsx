@@ -9,7 +9,7 @@ const Login = () => {
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   return (
-    <div className="flex items-center justify-center bg-[#f0f2f5] h-[100vh] w-full px-[10%]">
+    <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%]">
       <div className="w-[50%]">
         <Image
           src={"https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"}
@@ -19,13 +19,13 @@ const Login = () => {
         />
         {accounts.length ? (
           <div className={`ml-[20px] `}>
-            <p className="text-[24px] leading-[28px] text-[#1c1e21] font-[500]">
+            <p className="text-[24px] font-[500] leading-[28px] text-[#1c1e21]">
               Recent logins
             </p>
-            <span className="text-[#606770] text-[15px] leading-[24px] mb-6 block">
+            <span className="mb-6 block text-[15px] leading-[24px] text-[#606770]">
               Click your picture or add an account.
             </span>
-            <div className="flex gap-x-4 gap-y-3 flex-wrap">
+            <div className="flex flex-wrap gap-x-4 gap-y-3">
               {Array.from({ length: 5 }, (k, v) => {
                 return <CardUser key={v} userName="ys-ys" numNotiUnSeen={2} />;
               })}
@@ -33,14 +33,14 @@ const Login = () => {
             </div>
           </div>
         ) : (
-          <h2 className="text-[24px] leading-[28px] ml-[30px]">
+          <h2 className="ml-[30px] text-[24px] leading-[28px]">
             Facebook helps you connect and share with the people in your life.
           </h2>
         )}
       </div>
       <div>
         <div
-          className="rounded-lg border-none flex flex-col items-center pb-6 pt-[15px] px-7 bg-white"
+          className="flex flex-col items-center rounded-lg border-none bg-white px-7 pb-6 pt-[15px]"
           style={{
             boxShadow:
               "0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1)",
@@ -48,13 +48,13 @@ const Login = () => {
         >
           <input
             type="text"
-            className="rounded-[6px] text-[17px] px-[14px] py-[16px] w-[330px] mb-[10px] border-[#dddfe2] focus:outline-[#1b74e4] caret-[#1b74e4] border shadow-md shadow-[#e7f3ff]"
+            className="mb-[10px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4]"
             placeholder="Email address or phone number"
           />
           <div className="relative">
             <input
               type={`${isShowPass ? "text" : "password"}`}
-              className="rounded-[6px] text-[17px] px-[14px] py-[16px] w-[330px] mb-[15px] border-[#dddfe2] focus:outline-[#1b74e4] caret-[#1b74e4] border shadow-md shadow-[#e7f3ff]"
+              className="mb-[15px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4]"
               placeholder="Password"
             />
             <Image
@@ -62,21 +62,21 @@ const Login = () => {
               width={26}
               height={26}
               alt=""
-              className="absolute top-[14px] right-2 cursor-pointer"
+              className="absolute right-2 top-[14px] cursor-pointer"
               onClick={() => setIsShowPass(!isShowPass)}
             />
           </div>
 
-          <button className="bg-[#1877f2] border-none rounded-[6px] text-[20px] px-0 py-py-[20px] w-[332px] leading-[48px] text-white font-bold cursor-pointer">
+          <button className="py-py-[20px] w-[332px] cursor-pointer rounded-[6px] border-none bg-[#1877f2] px-0 text-[20px] font-bold leading-[48px] text-white">
             Login
           </button>
-          <span className="cursor-pointer hover:underline text-[#1877f2] font-[500] mt-4">
+          <span className="mt-4 cursor-pointer font-[500] text-[#1877f2] hover:underline">
             Forgotten password?
           </span>
-          <hr className="w-[100%] h-[1px] bg-[#dddfe2] my-[10px]" />
+          <hr className="my-[10px] h-[1px] w-[100%] bg-[#dddfe2]" />
           <button
             onClick={() => setShowModal(true)}
-            className="rounded-[6px] border-none text-[17px] leading-[48px] py-0 px-4 bg-[#42b72a] text-white font-bold my-[10px]"
+            className="my-[10px] rounded-[6px] border-none bg-[#42b72a] px-4 py-0 text-[17px] font-bold leading-[48px] text-white"
           >
             Create new account
           </button>
