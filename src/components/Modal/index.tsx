@@ -40,19 +40,38 @@ export const Modal: React.FC<IModal> = ({
               }}
             >
               <div
-                className={`modal__container ${className}`}
+                className={`modal__container relative ${className}`}
                 style={{
                   width: width ? width : "auto",
                   height: height ? height : "auto",
                 }}
                 ref={ref}
               >
+                <div
+                  className="absolute right-3 top-3 flex aspect-square w-9 cursor-pointer items-center justify-center rounded-full bg-[#ebedf0]"
+                  onClick={() => setShow?.(false)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </div>
                 {children}
               </div>
             </div>
           ) : null}
         </>,
-        document.body
+        document.body,
       )
     : null;
 };

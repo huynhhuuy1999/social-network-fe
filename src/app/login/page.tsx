@@ -1,6 +1,11 @@
 "use client";
 import Image from "next/image";
-import { CardAddUser, CardUser, FormCreateUser } from "./components";
+import {
+  CardAddUser,
+  CardUser,
+  FormAddAccount,
+  FormCreateUser,
+} from "./components";
 import React, { useState } from "react";
 import { Modal } from "@/components";
 
@@ -8,6 +13,7 @@ const Login = () => {
   const [accounts, setAccount] = useState<number[]>([1]);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false);
   return (
     <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%]">
       <div className="w-[50%]">
@@ -29,7 +35,7 @@ const Login = () => {
               {Array.from({ length: 5 }, (k, v) => {
                 return <CardUser key={v} userName="ys-ys" numNotiUnSeen={2} />;
               })}
-              <CardAddUser />
+              <CardAddUser onClick={() => setShowModalAddUser(true)} />
             </div>
           </div>
         ) : (
@@ -85,6 +91,10 @@ const Login = () => {
       <FormCreateUser
         show={showModal}
         setShow={(value) => setShowModal(value)}
+      />
+      <FormAddAccount
+        show={showModalAddUser}
+        setShow={(value) => setShowModalAddUser(value)}
       />
     </div>
   );
