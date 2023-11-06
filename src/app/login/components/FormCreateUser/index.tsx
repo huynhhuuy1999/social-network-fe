@@ -23,7 +23,7 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
             Sign Up
           </h3>
           <span className="text-[15px] leading-[24px] text-[#606770]">
-            It's quick and easy.
+            {`It's quick and easy.`}
           </span>
         </div>
 
@@ -47,14 +47,14 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
               options={Array.from({ length: 31 }, (v: number, k: number) => {
                 return { label: k + 1, value: k + 1 };
               })}
-              classNames="h-[39.6px] "
+              classNames="h-[39.6px]"
             />
             <SelectCustom
               name="month"
               options={MONTH.map((v) => {
                 return { value: v, label: v };
               })}
-              classNames="h-[39.6px] "
+              classNames="h-[39.6px]"
             />
             <SelectCustom
               name="year"
