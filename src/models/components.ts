@@ -29,4 +29,5 @@ export interface IInput {
   placeholder?: string;
   onClick?: MouseEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
 }
