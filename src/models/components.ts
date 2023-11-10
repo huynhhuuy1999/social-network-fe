@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { FocusEventHandler, MouseEventHandler, ReactNode } from "react";
 
 export interface IModal {
   show: boolean;
@@ -27,4 +27,6 @@ export interface IInput {
   value?: string | number;
   type?: string;
   placeholder?: string;
+  onClick?: MouseEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
 }

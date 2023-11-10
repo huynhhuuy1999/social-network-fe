@@ -7,7 +7,7 @@ import {
   FormCreateUser,
 } from "./components";
 import React, { useState } from "react";
-import { Modal } from "@/components";
+import { isMobile } from "react-device-detect";
 
 const Login = () => {
   const [accounts, setAccount] = useState<number[]>([1]);
