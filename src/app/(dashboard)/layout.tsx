@@ -5,13 +5,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { ReactNode, useMemo, useState } from "react";
 // Component
-import { InputCustom } from "@/components";
+import { Search } from "./components";
 //Constant
 import { TAB_ACTIVE } from "@/constants";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
-  const [showIconSearch, setShowIconSearch] = useState<boolean>(true);
   const [tabActive, setTabActive] = useState<number>(TAB_ACTIVE.HOME);
 
   const listIcon = useMemo(() => {
@@ -121,53 +120,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   }, [tabActive]);
 
   return (
-    <div className="bg-[#18191a]">
-      <div className="flex  items-center justify-between border-b border-b-[#393a3b] px-3">
-        <div className="flex w-[23%] items-center py-2">
-          {!showIconSearch ? (
-            <Image
-              src={"/icon/svg/leftArrow.svg"}
-              alt=""
-              width={20}
-              height={20}
-            />
-          ) : (
-            <Image
-              src="/icon/facebook.png"
-              alt=""
-              width={40}
-              height={40}
-              className="h-10 w-10"
-            />
-          )}
-
-          <div className="ml-2 flex h-10 w-[252px] items-center rounded-[50px] bg-[#3A3B3C] pl-2 placeholder:text-[#CCCCCC]">
-            {showIconSearch ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-[#CCCCCC]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            ) : null}
-
-            <InputCustom
-              type="text"
-              classNames="bg-transparent border-none text-white"
-              placeholder="Tìm kiếm trên facebook"
-              onFocus={(e) => setShowIconSearch(false)}
-              onBlur={(e) => setShowIconSearch(true)}
-            />
-          </div>
-        </div>
+    <div className="bg-dark-primary pt-[56px]">
+      <div className="bg-dark-primary fixed top-0 flex w-full items-center justify-between border-b border-b-[#393a3b] px-3">
+        <Search />
         <div className="flex grow items-center justify-between gap-1 px-[10%]">
           {listIcon.map((value, k) => {
             return (
