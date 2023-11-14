@@ -2,7 +2,7 @@ import { ICardSearch } from "@/models/layoutHeader";
 
 export const listUserSearch: ICardSearch[] = [
   {
-    name: "Phạm Minh Thư askdf asdkjfklsa f laj sdfl;k jasdkl; fsadj f;lk",
+    name: "Phạm Minh Thư",
     avatar: "1",
     isFriend: true,
     numNoti: 0,
@@ -17,5 +17,11 @@ export const listUserSearch: ICardSearch[] = [
     avatar: "3",
     isFriend: true,
     numNoti: 3,
+  },
+  {
+    name: "Nguyễn Hoàng Tú Giáp",
+    avatar: "4",
+    isFriend: true,
+    numNoti: 10,
   },
 ];

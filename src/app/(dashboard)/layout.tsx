@@ -121,7 +121,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="bg-dark-primary pt-[56px]">
-      <div className="bg-dark-primary fixed top-0 flex w-full items-center justify-between border-b border-b-[#393a3b] px-3">
+      <div className="fixed top-0 flex w-full items-center justify-between border-b border-b-[#393a3b] bg-dark-primary px-3">
         <Search />
         <div className="flex grow items-center justify-between gap-1 px-[10%]">
           {listIcon.map((value, k) => {
@@ -141,7 +141,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           })}
         </div>
         <div className="flex w-[23%] items-center justify-end gap-2">
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-[white]/10">
+          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC]"
@@ -157,7 +157,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               />
             </svg>
           </div>
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-[white]/10">
+          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC]"
@@ -168,7 +168,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
             </svg>
           </div>
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-[white]/10">
+          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC]"

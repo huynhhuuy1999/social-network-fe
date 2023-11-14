@@ -8,7 +8,7 @@ export const CardSearch: React.FC<ICardSearch> = ({
   numNoti,
 }) => {
   return (
-    <div className="bg-dark-primary hover:bg-hover-primary flex h-12 cursor-pointer items-center rounded-lg px-2 py-[6px] transition-all">
+    <div className="flex h-12 cursor-pointer items-center rounded-lg bg-dark-primary px-2 py-[6px] transition-all hover:bg-hover-primary">
       <div className="rounded-full">
         <Image
           src={`https://picsum.photos/id/${avatar}/200/300`}
@@ -19,19 +19,19 @@ export const CardSearch: React.FC<ICardSearch> = ({
         />
       </div>
       <div className="flex h-full grow flex-col justify-center px-2">
-        <span className="text-primary-text block overflow-hidden truncate text-ellipsis text-sm leading-[1.333]">
+        <span className="block max-w-[200px] overflow-hidden truncate text-ellipsis text-sm leading-[1.333] text-primary-text">
           {name}
         </span>
         {numNoti ? (
-          <div className="text-second-text flex items-center text-[0.7rem]">
+          <div className="flex items-center text-[0.7rem] text-second-text">
             <div className="mr-2 h-2 w-2 rounded-full bg-primary" />{" "}
-            <span>{numNoti} thông tin mới</span>
+            <span>{numNoti < 10 ? numNoti : "9+"} thông tin mới</span>
           </div>
         ) : isFriend ? (
-          <span className="text-second-text text-[0.7rem]">Bạn bè</span>
+          <span className="text-[0.7rem] text-second-text">Bạn bè</span>
         ) : null}
       </div>
-      <div className="hover:bg-hover-primary flex h-7 w-7 items-center justify-center rounded-full">
+      <div className="flex h-7 w-7 items-center justify-center rounded-full hover:bg-hover-primary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
