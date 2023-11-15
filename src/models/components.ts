@@ -31,3 +31,15 @@ export interface IInput {
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
 }
+
+export interface ISidebar {
+  children: ReactNode;
+}
+
+export interface ICardItemSidebar {
+  icon: string;
+  name: string;
+  link?: string;
+  isAvartar?: boolean;
+  arrowRight?: boolean;
+}

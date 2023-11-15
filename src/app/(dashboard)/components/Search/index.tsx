@@ -1,3 +1,5 @@
+"use client";
+
 import { InputCustom } from "@/components";
 import Image from "next/image";
 import { useState } from "react";
