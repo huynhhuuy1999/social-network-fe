@@ -37,9 +37,10 @@ export interface ISidebar {
 }
 
 export interface ICardItemSidebar {
-  icon: string;
   name: string;
-  link?: string;
+  link: string;
   isAvartar?: boolean;
   arrowRight?: boolean;
+  bgPosition: number[];
+  bgSize: number[];
 }

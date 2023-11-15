@@ -1,26 +1,37 @@
+"use client";
+// Libraries
+import { useRouter } from "next/navigation";
+// Type
 import { ICardItemSidebar } from "@/models/components";
-import Image from "next/image";
 
 export const CardItemSidebar: React.FC<ICardItemSidebar> = ({
-  icon,
   name,
   link,
   isAvartar = false,
   arrowRight,
+  bgPosition,
+  bgSize,
 }) => {
+  const route = useRouter();
   return (
-    <div className="flex items-center">
+    <div
+      className="flex h-[52px] cursor-pointer items-center rounded-lg px-3 transition-all hover:bg-hover-primary"
+      onClick={() => {
+        // route.push(link);
+        console.log("first");
+      }}
+    >
       <div
-        className={`mr-2 flex aspect-square w-9 items-center justify-center sm:mr-1 sm:w-7 ${
+        className={`mr-3 flex aspect-square w-9 items-center justify-center ${
           isAvartar ? "rounded-full" : ""
         }`}
       >
-        <Image
-          src={icon}
-          alt="icon"
-          width={36}
-          height={36}
-          className="aspect-square w-9 sm:w-7"
+        <i
+          className={`aspect-square h-9 bg-[url('/icon/homeIcon.png')]  bg-no-repeat`}
+          style={{
+            backgroundPosition: `${bgPosition[0]}px ${bgPosition[1]}px`,
+            backgroundSize: `${bgSize[0]}px ${bgSize[1]}px`,
+          }}
         />
       </div>
       <div className="grow">
