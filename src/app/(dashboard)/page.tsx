@@ -1,9 +1,9 @@
-import { SideBarRight, SidebarLeft } from "./components";
+import { SideBarRight, SideBarLeft } from "./components";
 
 const Home = () => {
   return (
     <div className="flex">
-      <SidebarLeft />
+      <SideBarLeft />
       <div className="grow"></div>
       <SideBarRight />
     </div>

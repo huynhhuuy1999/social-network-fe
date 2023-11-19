@@ -7,7 +7,7 @@ import { SideBar } from "..";
 import { CardItemSidebar } from "../CardItemSidebar";
 import { useState } from "react";
 
-export const SidebarLeft = () => {
+export const SideBarLeft = () => {
   const [isMore, setIsMore] = useState<boolean>(false);
   return (
     <SideBar>
