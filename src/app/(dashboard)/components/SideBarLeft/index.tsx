@@ -3,9 +3,10 @@
 // constants
 import { SIDEBAR_HOME_ADVANCED, SIDEBAR_HOME_DEFAULT } from "@/constants";
 //Component
-import { SideBar } from "..";
+
 import { CardItemSidebar } from "../CardItemSidebar";
 import { useState } from "react";
+import { SideBar } from "../SideBar";
 
 export const SideBarLeft = () => {
   const [isMore, setIsMore] = useState<boolean>(false);

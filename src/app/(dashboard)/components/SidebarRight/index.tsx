@@ -1,4 +1,5 @@
-import { CardUserMess, SideBar } from "..";
+import { CardUserMess } from "..";
+import { SideBar } from "../SideBar";
 import { listUserMess } from "./dummy";
 
 export const SideBarRight = () => {
