@@ -55,3 +55,9 @@ export interface ICardUserMess {
   haveStory: boolean;
   avatar: string;
 }
+
+export interface ICardStory {
+  avatar?: string;
+  name: string;
+  thumnail: string;
+}

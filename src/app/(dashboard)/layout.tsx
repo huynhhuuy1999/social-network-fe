@@ -105,7 +105,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="bg-dark-second pt-[56px]">
-      <div className="border-b-line fixed top-0 flex w-full items-center justify-between border-b bg-dark-primary px-3">
+      <div className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-b-line bg-dark-primary px-3">
         <Search />
         <div className="flex grow items-center justify-between gap-1 px-[10%]">
           {listIcon.map((value, k) => {

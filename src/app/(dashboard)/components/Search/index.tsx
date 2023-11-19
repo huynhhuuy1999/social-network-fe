@@ -12,7 +12,7 @@ export const Search = () => {
     <div className="relative flex w-[23%] items-center py-2 ">
       {isFocus ? (
         <div
-          className={`flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full hover:bg-hover-primary`}
+          className={`z-30 flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full hover:bg-hover-primary`}
         >
           <Image
             src={"/icon/svg/leftArrow.svg"}
@@ -27,11 +27,11 @@ export const Search = () => {
           alt=""
           width={40}
           height={40}
-          className="h-10 w-10"
+          className=" h-10 w-10 cursor-pointer"
         />
       )}
 
-      <div className="ml-2 flex h-10 w-[252px] items-center rounded-[50px] bg-[#3A3B3C] pl-2 ">
+      <div className="z-30 ml-2 flex h-10 w-[252px] items-center rounded-[50px] bg-[#3A3B3C] pl-2">
         {!isFocus ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export const Search = () => {
       </div>
       {isFocus ? (
         <div
-          className="absolute left-0 top-0 z-0 w-full overflow-hidden rounded-b-md pb-3"
+          className="absolute left-0 top-0 w-full overflow-hidden rounded-b-md pb-3"
           style={{
             boxShadow: "10px 17px 15px -3px rgba(0,0,0,0.2)",
           }}
@@ -73,7 +73,7 @@ export const Search = () => {
               <span className="text-sm text-[#5AA7FF]">Chỉnh sửa</span>
             </div>
           </div>
-          <div className="rounded-b-lg bg-dark-primary px-2 pb-2">
+          <div className="z-50 rounded-b-lg bg-dark-primary px-2 pb-2">
             {listUserSearch.map((value, key) => {
               return (
                 <CardSearch
