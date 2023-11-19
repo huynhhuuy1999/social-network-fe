@@ -1,11 +1,14 @@
-import { CardUserMess, SideBar } from "..";
+// Components
+import { SideBar } from "@/components";
+import { CardUserMess } from "..";
+// Constant
 import { listUserMess } from "./dummy";
 
 export const SideBarRight = () => {
   return (
-    <SideBar>
+    <SideBar className="right-0">
       <div className="mt-2 flex items-center justify-between">
-        <div>Người liên hệ</div>
+        <div className="font-semibold">Người liên hệ</div>
         <div className="flex items-center gap-1">
           <div className="flex aspect-square w-8 cursor-pointer items-center justify-center rounded-full hover:bg-hover-primary">
             <svg

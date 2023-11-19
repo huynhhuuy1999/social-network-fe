@@ -1,3 +1,4 @@
+"use client";
 import { IModal } from "@/models/components";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";

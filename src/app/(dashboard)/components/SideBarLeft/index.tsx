@@ -1,17 +1,16 @@
 "use client";
-
+// Library
+import { useState } from "react";
 // constants
 import { SIDEBAR_HOME_ADVANCED, SIDEBAR_HOME_DEFAULT } from "@/constants";
 //Component
-
+import { SideBar } from "@/components";
 import { CardItemSidebar } from "../CardItemSidebar";
-import { useState } from "react";
-import { SideBar } from "../SideBar";
 
 export const SideBarLeft = () => {
   const [isMore, setIsMore] = useState<boolean>(false);
   return (
-    <SideBar>
+    <SideBar className="left-0">
       <div>
         {SIDEBAR_HOME_DEFAULT.map((value, key) => {
           return (

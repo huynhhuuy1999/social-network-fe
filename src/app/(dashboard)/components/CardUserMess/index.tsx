@@ -22,7 +22,7 @@ export const CardUserMess: React.FC<ICardUserMess> = ({
         />
       </div>
       <div className="grow">
-        <span className="text-[15px] font-medium">{name}</span>
+        <span className="text-[15px] font-semibold">{name}</span>
       </div>
     </div>
   );
