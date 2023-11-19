@@ -1,5 +1,4 @@
-import { SideBarLeft } from "./components";
-import { SideBarRight } from "./components/SideBarRight";
+import { SideBarLeft, SideBarRight } from "./components";
 
 const Home = () => {
   return (
