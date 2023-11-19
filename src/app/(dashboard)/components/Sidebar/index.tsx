@@ -1,8 +1,11 @@
 import { ISidebar } from "@/models/components";
 
-export const Sidebar: React.FC<ISidebar> = ({ children }) => {
+export const SideBar: React.FC<ISidebar> = ({ children, className, width }) => {
   return (
-    <div className="h-[100vh] w-[23%] border-r border-r-[#393a3b] bg-dark-primary px-1">
+    <div
+      style={{ width: width }}
+      className={`h-[calc(100vh-56px)] w-[23%] overflow-auto bg-dark-second px-1 ${className}`}
+    >
       {children}
     </div>
   );

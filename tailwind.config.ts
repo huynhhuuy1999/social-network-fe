@@ -19,12 +19,15 @@ const config: Config = {
     },
     colors: {
       primary: "#0866FF",
+
       transparent: "transparent",
       white: "#FFF",
       "primary-text": "#E4E6EB",
       "second-text": "#B0B3B8",
       "dark-primary": "#242526",
+      "dark-second": "#18191a",
       "hover-primary": "rgb(255 255 255 / 0.1)",
+      line: "#393a3b",
     },
   },
   plugins: [],

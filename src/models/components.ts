@@ -34,6 +34,8 @@ export interface IInput {
 
 export interface ISidebar {
   children: ReactNode;
+  width?: number | string;
+  className?: string;
 }
 
 export interface ICardItemSidebar {
@@ -41,6 +43,15 @@ export interface ICardItemSidebar {
   link: string;
   isAvartar?: boolean;
   arrowRight?: boolean;
-  bgPosition: number[];
-  bgSize: number[];
+  bgPosition?: number[];
+  bgSize?: number[];
+  icon?: ReactNode;
+  onClick?: () => void;
+  typeIcon?: number;
+}
+
+export interface ICardUserMess {
+  name: string;
+  haveStory: boolean;
+  avatar: string;
 }

@@ -9,7 +9,7 @@ import { CardSearch } from "..";
 export const Search = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   return (
-    <div className="relative flex w-[23%] items-center py-2">
+    <div className="relative flex w-[23%] items-center py-2 ">
       {isFocus ? (
         <div
           className={`flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full hover:bg-hover-primary`}
@@ -58,7 +58,12 @@ export const Search = () => {
         />
       </div>
       {isFocus ? (
-        <div className="absolute left-0 top-0 z-0 w-full overflow-hidden  pb-3">
+        <div
+          className="absolute left-0 top-0 z-0 w-full overflow-hidden rounded-b-md pb-3"
+          style={{
+            boxShadow: "10px 17px 15px -3px rgba(0,0,0,0.2)",
+          }}
+        >
           <div className="h-14" />
           <div className="flex items-center justify-between bg-dark-primary px-4 pt-2">
             <span className="text-[1.0265rem] font-semibold text-primary-text ">

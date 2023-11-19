@@ -6,6 +6,16 @@
   color: #e4e6eb;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
 .modal {
   background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
