@@ -27,6 +27,7 @@ const config: Config = {
       "dark-primary": "#242526",
       "dark-second": "#18191a",
       "hover-primary": "rgb(255 255 255 / 0.1)",
+      "hover-second": "rgb(255 255 255 / 0.2)",
       line: "#393a3b",
     },
   },

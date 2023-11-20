@@ -61,3 +61,10 @@ export interface ICardStory {
   name: string;
   thumnail: string;
 }
+
+export interface IAvatar {
+  src: string;
+  width?: number;
+  height?: number;
+  className?: string;
+}
