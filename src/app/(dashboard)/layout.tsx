@@ -8,6 +8,7 @@ import React, { ReactNode, useMemo, useState } from "react";
 import { Search } from "./components";
 //Constant
 import { TAB_ACTIVE } from "@/constants";
+import { Avatar } from "@/components";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
@@ -162,15 +163,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
             </svg>
           </div>
-          <div className="cursor-pointer rounded-full">
-            <Image
-              src={"https://picsum.photos/200"}
-              alt=""
-              width={40}
-              height={40}
-              className="aspect-square w-10 rounded-full"
-            />
-          </div>
+          <Avatar src={"https://picsum.photos/200"} />
         </div>
       </div>
       {children}
