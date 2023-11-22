@@ -6,6 +6,16 @@ import { Avatar, Modal } from "@/components";
 import { IModalCreate } from "@/models/post";
 
 export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
+  const renderIconOption = (icon: string, onClick?: () => void) => {
+    return (
+      <div
+        className="flex aspect-square w-9 items-center justify-center rounded-full hover:bg-hover-primary"
+        onClick={onClick}
+      >
+        <Image src={icon} width={24} height={24} alt="" />
+      </div>
+    );
+  };
   return (
     <Modal
       show={show}
@@ -13,12 +23,12 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
       backgroundColorOverlay="transparent"
       className="!bg-dark-primary"
     >
-      <div className="max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border">
+      <div className="border-devider max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border">
         <div className="flex items-center justify-center py-4">
           <h2 className="text-[20px] font-semibold">Tạo bài viết</h2>
         </div>
         <hr className="text-line" />
-        <div className="py-3 pl-4 pr-1">
+        <div className="py-3 pl-4 pr-3">
           <div className="flex items-center">
             <Avatar
               width={40}
@@ -27,7 +37,9 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
               className="mr-2"
             />
             <div className="">
-              <span className="text-[15px] font-semibold">Huỳnh Hữu Ý</span>
+              <span className="cursor-pointer text-[15px] font-semibold">
+                Huỳnh Hữu Ý
+              </span>
               <div className="flex h-6 max-w-[156px] cursor-pointer items-center gap-1 rounded-md bg-hover-primary p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,13 +79,32 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
           <textarea
             name="abc"
             id=""
-            rows={15}
-            className="w-full resize-none bg-transparent focus:outline-none"
+            rows={5}
+            placeholder="Ý ơi bạn đang nghĩ gì thế?"
+            className="max-h-[300px] min-h-[50px] w-full resize-none bg-transparent text-[24px] focus:outline-none"
           />
-          <div>
+          <div className="border-devider flex cursor-pointer items-center justify-between rounded-md border px-2 py-3">
             <span>Thêm vào bài viết của bạn</span>
-            <div>{/* <Image /> */}</div>
+            <div className="flex gap-1">
+              {renderIconOption("/icon/iconImage.png")}
+              {renderIconOption("/icon/iconTag.png")}
+              {renderIconOption("/icon/iconFeel.png")}
+              {renderIconOption("/icon/iconLocation.png")}
+              {renderIconOption("/icon/iconGif.png")}
+              <div className="flex aspect-square w-9 items-center justify-center rounded-full hover:bg-hover-primary">
+                <i
+                  className="aspect-square h-6 bg-[url('/icon/iconDot.png')] bg-no-repeat"
+                  style={{
+                    backgroundPosition: "0 -38px",
+                    backgroundSize: "38px 122px",
+                  }}
+                />
+              </div>
+            </div>
           </div>
+          <button className="mt-4 h-9 w-full rounded-lg bg-primary text-[15px] font-semibold text-white">
+            Đăng
+          </button>
         </div>
       </div>
     </Modal>

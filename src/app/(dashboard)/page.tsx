@@ -11,7 +11,7 @@ const Home = () => {
     <div className="flex">
       <SideBarLeft />
 
-      <div className="h-[100vh] grow px-[30%] py-5">
+      <div className="h-[calc(100vh-48px)] grow px-[30%] py-6">
         <ListStory />
         <CreatePost />
         <ListPost />

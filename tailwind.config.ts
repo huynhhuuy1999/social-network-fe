@@ -29,6 +29,7 @@ const config: Config = {
       "hover-primary": "rgb(255 255 255 / 0.1)",
       "hover-second": "rgb(255 255 255 / 0.2)",
       line: "#393a3b",
+      devider: "#3E4042",
     },
   },
   plugins: [],
