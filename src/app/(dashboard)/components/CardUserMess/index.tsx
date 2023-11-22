@@ -1,3 +1,4 @@
+import { Avatar } from "@/components";
 import { ICardUserMess } from "@/models/components";
 import Image from "next/image";
 
@@ -8,7 +9,7 @@ export const CardUserMess: React.FC<ICardUserMess> = ({
 }) => {
   return (
     <div className="flex h-[52px] cursor-pointer items-center rounded-md px-2 transition-all hover:bg-hover-primary">
-      <div
+      {/* <div
         className={`${
           haveStory ? "p-[2px]" : ""
         } mr-2 flex h-9 w-9 items-center justify-center rounded-full`}
@@ -20,7 +21,14 @@ export const CardUserMess: React.FC<ICardUserMess> = ({
           height={haveStory ? 32 : 36}
           className="rounded-full"
         />
-      </div>
+      </div> */}
+      <Avatar
+        src={avatar || ""}
+        width={haveStory ? 32 : 36}
+        height={haveStory ? 32 : 36}
+        borderWidth={haveStory ? 2 : 0}
+        className="mr-2"
+      />
       <div className="grow">
         <span className="text-[15px] font-semibold">{name}</span>
       </div>

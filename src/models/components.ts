@@ -8,6 +8,7 @@ export interface IModal {
   className?: string;
   setShow?: (isShow: boolean) => void;
   children?: ReactNode;
+  classNameIconClose?: string;
 }
 
 export interface ISelect {
@@ -67,4 +68,6 @@ export interface IAvatar {
   width?: number;
   height?: number;
   className?: string;
+  classNameImage?: string;
+  borderWidth?: number;
 }

@@ -11,6 +11,7 @@ export const Modal: React.FC<IModal> = ({
   height,
   width,
   backgroundColorOverlay,
+  classNameIconClose,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState<boolean>(false);
@@ -49,7 +50,7 @@ export const Modal: React.FC<IModal> = ({
                 ref={ref}
               >
                 <div
-                  className="absolute right-3 top-3 flex aspect-square w-9 cursor-pointer items-center justify-center rounded-full bg-[#ebedf0]"
+                  className={`absolute right-3 top-3 flex aspect-square w-9 cursor-pointer items-center justify-center rounded-full bg-[#ebedf0] ${className}`}
                   onClick={() => setShow?.(false)}
                 >
                   <svg

@@ -52,7 +52,7 @@ export const CardItemSidebar: React.FC<ICardItemSidebar> = ({
         </div>
       )}
       <div className="grow">
-        <span className="text-[0.9375rem] font-medium leading-[1.33] sm:text-sm">
+        <span className="text-[0.9375rem] font-semibold leading-[1.33] sm:text-sm">
           {name}
         </span>
       </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 // constants
 import { SIDEBAR_HOME_ADVANCED, SIDEBAR_HOME_DEFAULT } from "@/constants";
 //Component
-import { SideBar } from "@/components";
+import { Avatar, SideBar } from "@/components";
 import { CardItemSidebar } from "../CardItemSidebar";
 
 export const SideBarLeft = () => {
@@ -12,6 +12,18 @@ export const SideBarLeft = () => {
   return (
     <SideBar className="left-0">
       <div>
+        <CardItemSidebar
+          icon={
+            <Avatar
+              src="https://picsum.photos/id/1/100/200"
+              width={36}
+              height={36}
+              className="mr-3"
+            />
+          }
+          name={"Huỳnh Hữu Ý"}
+          link=""
+        />
         {SIDEBAR_HOME_DEFAULT.map((value, key) => {
           return (
             <CardItemSidebar

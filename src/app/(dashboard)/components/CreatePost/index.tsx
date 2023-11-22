@@ -1,10 +1,21 @@
-import { Avatar } from "@/components";
+"use client";
+
+// Library
+import React, { useState } from "react";
 import Image from "next/image";
+// COmponent
+import { Avatar, Modal } from "@/components";
+import { ModalCreate } from "./ModalCreate";
 
 export const CreatePost = () => {
+  const [isShowModalCreatePost, setIsShowModalCreatePost] =
+    useState<boolean>(false);
   return (
-    <div className="mt-5 rounded-lg bg-dark-primary px-3 py-2">
-      <div className="flex gap-2">
+    <div className="mt-5 rounded-lg bg-dark-primary px-3 py-3">
+      <div
+        className="flex gap-2"
+        onClick={() => setIsShowModalCreatePost(!isShowModalCreatePost)}
+      >
         <Avatar src={`https://picsum.photos/id/${6}/200`} />
         <div className="flex h-10 grow cursor-pointer items-center rounded-full bg-hover-primary px-3 transition-all hover:bg-hover-second">
           <span>Bạn đang nghĩ gì thế???</span>
@@ -47,6 +58,10 @@ export const CreatePost = () => {
           </span>
         </div>
       </div>
+      <ModalCreate
+        show={isShowModalCreatePost}
+        setShow={(value) => setIsShowModalCreatePost(value)}
+      />
     </div>
   );
 };
