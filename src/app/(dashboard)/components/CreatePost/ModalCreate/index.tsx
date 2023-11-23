@@ -23,7 +23,7 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
       backgroundColorOverlay="transparent"
       className="!bg-dark-primary"
     >
-      <div className="border-devider max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border">
+      <div className="max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border border-devider">
         <div className="flex items-center justify-center py-4">
           <h2 className="text-[20px] font-semibold">Tạo bài viết</h2>
         </div>
@@ -80,10 +80,10 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
             name="abc"
             id=""
             rows={5}
-            placeholder="Ý ơi bạn đang nghĩ gì thế?"
-            className="max-h-[300px] min-h-[50px] w-full resize-none bg-transparent text-[24px] focus:outline-none"
+            placeholder="Ý ơi, bạn đang nghĩ gì thế?"
+            className="mt-2 max-h-[300px] min-h-[50px] w-full resize-none bg-transparent text-[24px] focus:outline-none"
           />
-          <div className="border-devider flex cursor-pointer items-center justify-between rounded-md border px-2 py-3">
+          <div className="flex cursor-pointer items-center justify-between rounded-md border border-devider px-2 py-3">
             <span>Thêm vào bài viết của bạn</span>
             <div className="flex gap-1">
               {renderIconOption("/icon/iconImage.png")}

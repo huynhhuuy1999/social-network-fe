@@ -1,3 +1,9 @@
+import { PostItem } from "@/components";
+
 export const ListPost = () => {
-  return <div>ListPost</div>;
+  return (
+    <div>
+      <PostItem />
+    </div>
+  );
 };

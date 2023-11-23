@@ -9,19 +9,6 @@ export const CardUserMess: React.FC<ICardUserMess> = ({
 }) => {
   return (
     <div className="flex h-[52px] cursor-pointer items-center rounded-md px-2 transition-all hover:bg-hover-primary">
-      {/* <div
-        className={`${
-          haveStory ? "p-[2px]" : ""
-        } mr-2 flex h-9 w-9 items-center justify-center rounded-full`}
-      >
-        <Image
-          src={avatar}
-          alt="avatar"
-          width={haveStory ? 32 : 36}
-          height={haveStory ? 32 : 36}
-          className="rounded-full"
-        />
-      </div> */}
       <Avatar
         src={avatar || ""}
         width={haveStory ? 32 : 36}
