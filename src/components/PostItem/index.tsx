@@ -1,6 +1,8 @@
 import Image from "next/image";
+// Component
 import { Avatar } from "..";
 import { ListImage } from "./ListImage";
+import { Option } from "./Option";
 
 export const PostItem = () => {
   return (
@@ -53,7 +55,7 @@ export const PostItem = () => {
               className="h-6 w-6"
             >
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 d="M6 18L18 6M6 6l12 12"
               />
@@ -70,8 +72,7 @@ export const PostItem = () => {
         </span>
       </div>
       <ListImage />
-
-      <div></div>
+      <Option />
       <div></div>
       <div></div>
     </div>

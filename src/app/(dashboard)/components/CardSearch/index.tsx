@@ -41,7 +41,7 @@ export const CardSearch: React.FC<ICardSearch> = ({
           className="h-4 w-4 text-[#CCC]"
         >
           <path
-            stroke-linecap="round"
+            strokeLinecap="round"
             strokeLinejoin="round"
             d="M6 18L18 6M6 6l12 12"
           />
