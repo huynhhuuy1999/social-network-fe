@@ -51,7 +51,7 @@ export const Search = () => {
 
         <InputCustom
           type="text"
-          classNames="bg-transparent border-none text-white text-[13px] placeholder:text-[#CCCCCC] z-10"
+          classNames="bg-transparent border-none text-white text-13 placeholder:text-[#CCCCCC] z-10"
           placeholder="Tìm kiếm trên facebook"
           onFocus={(e) => setIsFocus(true)}
           onBlur={(e) => setIsFocus(false)}

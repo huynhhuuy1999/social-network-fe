@@ -31,6 +31,10 @@ const config: Config = {
       line: "#393a3b",
       devider: "#3E4042",
     },
+    fontSize: {
+      12: "12px",
+      13: "13px",
+    },
   },
   plugins: [],
 };

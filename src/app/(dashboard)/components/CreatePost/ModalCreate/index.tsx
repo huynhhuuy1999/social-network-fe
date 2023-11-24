@@ -56,7 +56,7 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
                   />
                 </svg>
 
-                <span className="truncate text-[13px] font-semibold">
+                <span className="text-13 truncate font-semibold">
                   Công khai
                 </span>
                 <svg

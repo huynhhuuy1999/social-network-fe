@@ -38,7 +38,7 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
             placeholder="Mobile number or email address"
           />
           <InputCustom classNames="mt-2" placeholder="New password" />
-          <span className="mt-3 text-[12px] leading-[20px] text-[#606770]">
+          <span className="text-12 mt-3 leading-[20px] text-[#606770]">
             Date of birth
           </span>
           <div className="flex gap-3">
@@ -64,7 +64,7 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
               classNames="h-[39.6px] "
             />
           </div>
-          <span className="mt-3 text-[12px] leading-[20px] text-[#606770]">
+          <span className="text-12 mt-3 leading-[20px] text-[#606770]">
             Gender
           </span>
           <div className="flex w-full gap-3 ">

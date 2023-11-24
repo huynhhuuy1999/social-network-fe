@@ -23,7 +23,7 @@ export const CreatePost = () => {
       </div>
       <hr className="my-2 text-line" />
       <div className="flex">
-        <div className="flex h-10 grow cursor-pointer items-center justify-center rounded-lg hover:bg-hover-primary">
+        <div className="flex h-10 w-[calc(100%/3)]  cursor-pointer items-center justify-center rounded-lg hover:bg-hover-primary">
           <Image
             src={"/icon/iconCamera.png"}
             alt=""
@@ -31,11 +31,11 @@ export const CreatePost = () => {
             height={24}
             className="aspect-square w-6"
           />
-          <span className="ml-2 block text-[13px] font-semibold ">
+          <span className="text-13 ml-2 block font-semibold ">
             Video trực tiếp
           </span>
         </div>
-        <div className="flex h-10 grow cursor-pointer items-center justify-center rounded-lg hover:bg-hover-primary">
+        <div className="flex h-10 w-[calc(100%/3)]  cursor-pointer items-center justify-center rounded-lg hover:bg-hover-primary">
           <Image
             src={"/icon/iconImage.png"}
             alt=""
@@ -43,9 +43,9 @@ export const CreatePost = () => {
             height={24}
             className="aspect-square w-6"
           />
-          <span className="ml-2 block text-[13px] font-semibold">Ảnh</span>
+          <span className="text-13 ml-2 block font-semibold">Ảnh/video</span>
         </div>
-        <div className="flex h-10 grow cursor-pointer items-center justify-center rounded-lg hover:bg-hover-primary">
+        <div className="flex h-10 w-[calc(100%/3)]  cursor-pointer items-center justify-center rounded-lg hover:bg-hover-primary">
           <Image
             src={"/icon/iconFeel.png"}
             alt=""
@@ -53,8 +53,8 @@ export const CreatePost = () => {
             height={24}
             className="aspect-square w-6"
           />
-          <span className="ml-2 block text-[13px] font-semibold">
-            Cảm xúc hoạt động
+          <span className="text-13 ml-2 block font-semibold">
+            Cảm xúc/hoạt động
           </span>
         </div>
       </div>

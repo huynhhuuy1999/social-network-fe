@@ -1,5 +1,5 @@
 import { ICardItemSidebar } from "@/models/components";
-import { TYPE_ICON } from "./enum";
+import { TYPE_ICON, TYPE_REACT } from "./enum";
 
 export const MONTH = [
   "Jan",
@@ -114,5 +114,32 @@ export const SIDEBAR_HOME_ADVANCED: ICardItemSidebar[] = [
     bgSize: [38, 570],
     name: "Video chơi game",
     link: "/video-game",
+  },
+];
+
+export const ListReact = [
+  {
+    src: "/icon/svg/like.svg",
+    type: TYPE_REACT.LIKE,
+  },
+  {
+    src: "/icon/svg/heartEyes.svg",
+    type: TYPE_REACT.HEART,
+  },
+  {
+    src: "/icon/svg/cryEyes.svg",
+    type: TYPE_REACT.CRY,
+  },
+  {
+    src: "/icon/svg/wowIcon.svg",
+    type: TYPE_REACT.WOW,
+  },
+  {
+    src: "/icon/svg/TearEyes.svg",
+    type: TYPE_REACT.SAD,
+  },
+  {
+    src: "/icon/svg/angry.svg",
+    type: TYPE_REACT.ANGRY,
   },
 ];
