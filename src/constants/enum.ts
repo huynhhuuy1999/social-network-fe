@@ -9,6 +9,7 @@ export enum TYPE_REACT {
   HEART = 2,
   CRY = 3,
   WOW = 4,
-  SAD = 5,
+  SMILE = 5,
   ANGRY = 6,
+  NONE = 0,
 }

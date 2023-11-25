@@ -1,4 +1,5 @@
 import { CommentItem } from "./CommentItem";
+import { InputComment } from "./InputComment";
 
 export const ListComment = () => {
   return (
@@ -9,7 +10,9 @@ export const ListComment = () => {
       <CommentItem />
       <div className="ml-10 mt-2">
         <CommentItem />
+        <InputComment />
       </div>
+      <InputComment />
     </div>
   );
 };

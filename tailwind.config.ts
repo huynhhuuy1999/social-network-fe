@@ -19,7 +19,6 @@ const config: Config = {
     },
     colors: {
       primary: "#0866FF",
-
       transparent: "transparent",
       white: "#FFF",
       "primary-text": "#E4E6EB",

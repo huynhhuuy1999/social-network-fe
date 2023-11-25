@@ -125,21 +125,64 @@ export const ListReact = [
   {
     src: "/icon/svg/heartEyes.svg",
     type: TYPE_REACT.HEART,
+    color: "red",
   },
   {
     src: "/icon/svg/cryEyes.svg",
     type: TYPE_REACT.CRY,
+    color: "#0866FF",
   },
   {
     src: "/icon/svg/wowIcon.svg",
     type: TYPE_REACT.WOW,
+    color: "#0866FF",
   },
   {
     src: "/icon/svg/TearEyes.svg",
-    type: TYPE_REACT.SAD,
+    type: TYPE_REACT.SMILE,
+    color: "#0866FF",
   },
   {
     src: "/icon/svg/angry.svg",
     type: TYPE_REACT.ANGRY,
+    color: "#0866FF",
   },
 ];
+
+export const reactChoose = {
+  LIKE: {
+    name: "Thích",
+    color: "rgb(247, 177, 37)",
+    icon: "/icon/svg/like.svg",
+  },
+  HEART: {
+    name: "Yêu thích",
+    color: "rgb(243, 62, 88)",
+    icon: "/icon/svg/heartEyes.svg",
+  },
+  CRY: {
+    name: "Buồn",
+    color: "rgb(247, 177, 37)",
+    icon: "/icon/svg/cryEyes.svg",
+  },
+  WOW: {
+    name: "Wow",
+    color: "rgb(247, 177, 37)",
+    icon: "/icon/svg/wowIcon.svg",
+  },
+  SMILE: {
+    name: "Haha",
+    color: "rgb(247, 177, 37)",
+    icon: "/icon/svg/TearEyes.svg",
+  },
+  ANGRY: {
+    name: "Phẫn nộ",
+    color: "rgb(233, 113, 15)",
+    icon: "/icon/svg/angry.svg",
+  },
+  NONE: {
+    name: "Thích",
+    color: "#E4E6EB",
+    icon: "/icon/svg/likeSolid.svg",
+  },
+};
