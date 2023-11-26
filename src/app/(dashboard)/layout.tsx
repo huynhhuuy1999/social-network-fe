@@ -108,7 +108,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
     <div className="bg-dark-second pt-[56px]">
       <div className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-b-line bg-dark-primary px-3">
         <Search />
-        <div className="flex grow items-center justify-between gap-1 px-[10%]">
+        <div className="flex grow items-center justify-between gap-1 px-[10%] sm:hidden">
           {listIcon.map((value, k) => {
             return (
               <div
@@ -126,7 +126,8 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           })}
         </div>
         <div className="flex w-[23%] items-center justify-end gap-2">
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
+          {/* icon Menu */}
+          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary sm:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC]"
@@ -142,6 +143,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               />
             </svg>
           </div>
+          {/* icon message */}
           <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -153,6 +155,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
             </svg>
           </div>
+          {/* icon notification */}
           <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"

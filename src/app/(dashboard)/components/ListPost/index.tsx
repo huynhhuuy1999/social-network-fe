@@ -4,6 +4,7 @@ export const ListPost = () => {
   return (
     <div>
       <PostItem />
+      <PostItem />
     </div>
   );
 };

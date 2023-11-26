@@ -9,7 +9,7 @@ import { CardSearch } from "..";
 export const Search = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   return (
-    <div className="relative flex w-[23%] items-center py-2 ">
+    <div className="relative flex w-[23%] items-center py-2 sm:w-[320px]">
       {isFocus ? (
         <div
           className={`z-30 flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full hover:bg-hover-primary`}

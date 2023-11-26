@@ -1,11 +1,19 @@
+"use client";
+//Library
+import { useState } from "react";
+// Componet
 import { Avatar } from "@/components";
+import { ModalOption } from "./ModalOption";
+// Constant
 
 export const HeaderPost = () => {
+  const [isShowOption, setIsShowOption] = useState<boolean>(false);
+
   return (
     <div className="item-center flex px-3">
       <Avatar src="https://picsum.photos/id/1/100/200" height={40} width={40} />
       <div className="ml-2 flex grow flex-col">
-        <span className=" cursor-pointer text-[15px] font-semibold hover:underline">
+        <span className=" block cursor-pointer text-[15px] font-semibold hover:underline">
           Phạm Minh Thư
         </span>
         <div className="flex items-center gap-2">
@@ -26,8 +34,14 @@ export const HeaderPost = () => {
           </svg>
         </div>
       </div>
-      <div className="flex cursor-pointer items-center gap-1">
-        <div className="flex aspect-square w-9 items-center justify-center rounded-full hover:bg-hover-primary">
+      <div className="relative flex cursor-pointer items-center gap-1">
+        {/* icon Dot */}
+        <div
+          className=" flex aspect-square w-9 items-center justify-center rounded-full hover:bg-hover-primary"
+          onClick={() => {
+            setIsShowOption(true);
+          }}
+        >
           <i
             className="aspect-square h-6 bg-[url('/icon/iconDot.png')] bg-no-repeat"
             style={{
@@ -36,6 +50,11 @@ export const HeaderPost = () => {
             }}
           />
         </div>
+        <ModalOption
+          isShow={isShowOption}
+          setIsShow={(value) => setIsShowOption(value)}
+        />
+        {/* icon X */}
         <div className="flex aspect-square w-9 cursor-pointer items-center justify-center rounded-full hover:bg-hover-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -2,7 +2,7 @@
 import { ListImage } from "./ListImage";
 import { Option } from "./Option";
 import { ListComment } from "./ListComment";
-import { HeaderPost } from "./HeaderPost/indx";
+import { HeaderPost } from "./HeaderPost";
 import { StatusText } from "./StatusText";
 
 export const PostItem = () => {

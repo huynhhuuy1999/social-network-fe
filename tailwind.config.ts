@@ -34,6 +34,14 @@ const config: Config = {
       12: "12px",
       13: "13px",
     },
+    screens: {
+      sm: { max: "700px" },
+
+      md: { min: "701px", max: "1023px" },
+      // => @media (min-width: 701px and max-width: 1023px) { ... }
+
+      lg: { min: "1024px" },
+    },
   },
   plugins: [],
 };

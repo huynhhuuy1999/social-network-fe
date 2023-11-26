@@ -186,3 +186,11 @@ export const reactChoose = {
     icon: "/icon/svg/likeSolid.svg",
   },
 };
+
+export const actionItemPost = [
+  {
+    icon: "/icon/iconBlock.png",
+    title: "Chặn trang cá nhân của ",
+    description: "Các bạn sẽ không thể nhìn thấy hoặc liên hệ với nhau.",
+  },
+];
