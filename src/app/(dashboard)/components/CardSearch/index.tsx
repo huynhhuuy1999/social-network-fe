@@ -15,11 +15,11 @@ export const CardSearch: React.FC<ICardSearch> = ({
           alt=""
           width={36}
           height={36}
-          className="aspect-square w-9 rounded-full"
+          className="aspect-square w-9 rounded-full sm:!w-8"
         />
       </div>
       <div className="flex h-full grow flex-col justify-center px-2">
-        <span className="block max-w-[200px] overflow-hidden truncate text-ellipsis text-sm leading-[1.333] text-primary-text">
+        <span className="sm:text-14 block max-w-[200px] overflow-hidden truncate text-ellipsis leading-[1.333] text-primary-text">
           {name}
         </span>
         {numNoti ? (

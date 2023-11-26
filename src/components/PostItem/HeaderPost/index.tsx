@@ -11,9 +11,15 @@ export const HeaderPost = () => {
 
   return (
     <div className="item-center flex px-3">
-      <Avatar src="https://picsum.photos/id/1/100/200" height={40} width={40} />
+      <Avatar
+        src="https://picsum.photos/id/1/100/200"
+        height={40}
+        width={40}
+        className="sm:!h-9 sm:!w-9"
+        classNameImage="sm:!h-9 sm:!w-9"
+      />
       <div className="ml-2 flex grow flex-col">
-        <span className=" block cursor-pointer text-[15px] font-semibold hover:underline">
+        <span className=" block cursor-pointer text-[15px] font-semibold hover:underline sm:text-[14px]">
           Phạm Minh Thư
         </span>
         <div className="flex items-center gap-2">

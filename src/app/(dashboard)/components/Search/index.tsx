@@ -66,11 +66,11 @@ export const Search = () => {
         >
           <div className="h-14" />
           <div className="flex items-center justify-between bg-dark-primary px-4 pt-2">
-            <span className="text-[1.0265rem] font-semibold text-primary-text ">
+            <span className="sm:text-14 text-[1.0265rem] font-semibold text-primary-text ">
               Tìm kiếm gần đây
             </span>
             <div className="cursor-pointer rounded-md px-2 py-1 hover:bg-hover-primary">
-              <span className="text-sm text-[#5AA7FF]">Chỉnh sửa</span>
+              <span className="sm:text-14 text-[#5AA7FF]">Chỉnh sửa</span>
             </div>
           </div>
           <div className="z-50 rounded-b-lg bg-dark-primary px-2 pb-2">

@@ -15,8 +15,17 @@ const Login = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false);
   return (
-    <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%]">
-      <div className="w-[50%]">
+    <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%] sm:block">
+      <div className="flex justify-center pt-[10vh] md:hidden lg:hidden">
+        <Image
+          src={"https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"}
+          alt="logo fb"
+          height={106}
+          width={321}
+        />
+      </div>
+
+      <div className="w-[50%] sm:hidden">
         <Image
           src={"https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"}
           alt="logo fb"
@@ -24,7 +33,7 @@ const Login = () => {
           width={accounts.length ? 212 : 321}
         />
         {accounts.length ? (
-          <div className={`ml-[20px] `}>
+          <div className={`ml-[20px]`}>
             <p className="text-[24px] font-[500] leading-[28px] text-[#1c1e21]">
               Recent logins
             </p>
@@ -44,7 +53,7 @@ const Login = () => {
           </h2>
         )}
       </div>
-      <div>
+      <div className="">
         <div
           className="flex flex-col items-center rounded-lg border-none bg-white px-7 pb-6 pt-[15px]"
           style={{
@@ -54,13 +63,13 @@ const Login = () => {
         >
           <input
             type="text"
-            className="mb-[10px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4]"
+            className="sm:text-15 mb-[10px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4] sm:w-[240px] sm:px-3 sm:py-3 "
             placeholder="Email address or phone number"
           />
           <div className="relative">
             <input
               type={`${isShowPass ? "text" : "password"}`}
-              className="mb-[15px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4]"
+              className="mb-[15px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4] sm:w-[240px] sm:px-3 sm:py-3 "
               placeholder="Password"
             />
             <Image
@@ -68,21 +77,21 @@ const Login = () => {
               width={26}
               height={26}
               alt=""
-              className="absolute right-2 top-[14px] cursor-pointer"
+              className="absolute right-2 top-[14px] aspect-square cursor-pointer sm:w-6"
               onClick={() => setIsShowPass(!isShowPass)}
             />
           </div>
 
-          <button className="py-py-[20px] w-[332px] cursor-pointer rounded-[6px] border-none bg-[#1877f2] px-0 text-[20px] font-bold leading-[48px] text-white">
+          <button className=" sm:text-15 w-[332px] cursor-pointer rounded-[6px] border-none bg-[#1877f2] text-[20px] font-bold leading-[48px] text-white sm:w-[240px] sm:leading-[40px]">
             Login
           </button>
-          <span className="mt-4 cursor-pointer font-[500] text-[#1877f2] hover:underline">
+          <span className="sm:text-14 mt-4 cursor-pointer font-[500] text-[#1877f2] hover:underline">
             Forgotten password?
           </span>
           <hr className="my-[10px] h-[1px] w-[100%] bg-[#dddfe2]" />
           <button
             onClick={() => setShowModal(true)}
-            className="my-[10px] rounded-[6px] border-none bg-[#42b72a] px-4 py-0 text-[17px] font-bold leading-[48px] text-white"
+            className="sm:text-15 my-[10px] rounded-[6px] border-none bg-[#42b72a] px-4 py-0 text-[17px] font-bold leading-[48px] text-white  sm:w-[240px] sm:leading-[40px]"
           >
             Create new account
           </button>

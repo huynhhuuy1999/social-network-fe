@@ -106,7 +106,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="bg-dark-second pt-[56px]">
-      <div className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-b-line bg-dark-primary px-3">
+      <div className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-b-line bg-dark-primary px-3 sm:gap-2">
         <Search />
         <div className="flex grow items-center justify-between gap-1 px-[10%] sm:hidden">
           {listIcon.map((value, k) => {
@@ -159,14 +159,18 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-[#CCCCCC]"
+              className="h-6 w-6 text-[#CCCCCC] sm:h-5 sm:w-5"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
               <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
             </svg>
           </div>
-          <Avatar src={"https://picsum.photos/200"} />
+          <Avatar
+            src={"https://picsum.photos/200"}
+            className="sm:!h-9 sm:!w-9"
+            classNameImage="sm:!h-9 sm:!w-9"
+          />
         </div>
       </div>
       {children}

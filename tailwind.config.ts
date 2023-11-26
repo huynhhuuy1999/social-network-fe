@@ -33,6 +33,8 @@ const config: Config = {
     fontSize: {
       12: "12px",
       13: "13px",
+      14: "14px",
+      15: "15px",
     },
     screens: {
       sm: { max: "700px" },

@@ -7,7 +7,7 @@ import { StatusText } from "./StatusText";
 
 export const PostItem = () => {
   return (
-    <div className="mt-4 rounded-lg bg-dark-primary py-3">
+    <div className="mt-4 rounded-lg bg-dark-primary py-3 sm:rounded-none">
       <HeaderPost />
       <StatusText />
       <ListImage />

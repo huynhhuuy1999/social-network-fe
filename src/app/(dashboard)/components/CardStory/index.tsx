@@ -4,7 +4,7 @@ import { ICardStory } from "@/models/components";
 export const CardStory: React.FC<ICardStory> = ({ name, thumnail, avatar }) => {
   return (
     <div
-      className={`relative h-[250px] cursor-pointer rounded-lg bg-cover bg-center bg-no-repeat`}
+      className={`relative h-[250px] cursor-pointer rounded-lg bg-cover bg-center bg-no-repeat sm:h-[200px]`}
       style={{
         backgroundImage: `url(${thumnail})`,
       }}
