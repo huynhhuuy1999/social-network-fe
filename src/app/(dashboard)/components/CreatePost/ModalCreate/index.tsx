@@ -27,9 +27,11 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
       show={show}
       setShow={(value) => setShow?.(value)}
       backgroundColorOverlay="transparent"
-      className="!bg-dark-primary"
+      className="max-h-[80vh] !bg-dark-primary"
+      width={"100%"}
+      // height={"80vh"}
     >
-      <div className="max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border border-devider sm:min-h-[360px] sm:w-[300px] sm:min-w-[280px]">
+      <div className="max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border border-devider sm:h-auto sm:min-h-[360px] sm:w-full">
         <div className="flex items-center justify-center py-4">
           <h2 className="text-[20px] font-semibold sm:text-[15px]">
             Tạo bài viết

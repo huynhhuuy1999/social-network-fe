@@ -1,4 +1,9 @@
-import { FocusEventHandler, MouseEventHandler, ReactNode } from "react";
+import {
+  CSSProperties,
+  FocusEventHandler,
+  MouseEventHandler,
+  ReactNode,
+} from "react";
 
 export interface IModal {
   show: boolean;
@@ -31,6 +36,7 @@ export interface IInput {
   onClick?: MouseEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
+  styles?: CSSProperties;
 }
 
 export interface ISidebar {

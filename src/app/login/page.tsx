@@ -15,7 +15,7 @@ const Login = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false);
   return (
-    <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%] sm:block">
+    <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%] sm:block sm:px-4">
       <div className="flex justify-center pt-[10vh] md:hidden lg:hidden">
         <Image
           src={"https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"}
@@ -55,7 +55,7 @@ const Login = () => {
       </div>
       <div className="">
         <div
-          className="flex flex-col items-center rounded-lg border-none bg-white px-7 pb-6 pt-[15px]"
+          className="flex flex-col items-center rounded-lg border-none bg-white px-7 pb-6 pt-[15px] sm:px-3"
           style={{
             boxShadow:
               "0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1)",
@@ -63,35 +63,36 @@ const Login = () => {
         >
           <input
             type="text"
-            className="sm:text-15 mb-[10px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4] sm:w-[240px] sm:px-3 sm:py-3 "
+            className="mb-[10px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] text-dark-primary caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4] sm:w-[90%] sm:px-3 sm:py-3 sm:text-15"
             placeholder="Email address or phone number"
           />
-          <div className="relative">
+          <div className="relative flex w-full justify-center">
             <input
               type={`${isShowPass ? "text" : "password"}`}
-              className="mb-[15px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4] sm:w-[240px] sm:px-3 sm:py-3 "
+              className="mb-[15px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] text-dark-primary caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4]  sm:w-[90%] sm:p-3 sm:text-15"
               placeholder="Password"
             />
+            {/* icon eye */}
             <Image
               src={`/icon/${isShowPass ? "show.png" : "eye.png"}`}
               width={26}
               height={26}
               alt=""
-              className="absolute right-2 top-[14px] aspect-square cursor-pointer sm:w-6"
+              className="absolute right-2 top-[14px] aspect-square cursor-pointer sm:right-[8%] sm:w-6"
               onClick={() => setIsShowPass(!isShowPass)}
             />
           </div>
 
-          <button className=" sm:text-15 w-[332px] cursor-pointer rounded-[6px] border-none bg-[#1877f2] text-[20px] font-bold leading-[48px] text-white sm:w-[240px] sm:leading-[40px]">
+          <button className=" w-[332px] cursor-pointer rounded-[6px] border-none bg-[#1877f2] text-[20px] font-bold leading-[48px] text-white sm:w-[90%] sm:text-15 sm:leading-[40px]">
             Login
           </button>
-          <span className="sm:text-14 mt-4 cursor-pointer font-[500] text-[#1877f2] hover:underline">
+          <span className="mt-4 cursor-pointer font-[500] text-[#1877f2] hover:underline sm:text-14">
             Forgotten password?
           </span>
           <hr className="my-[10px] h-[1px] w-[100%] bg-[#dddfe2]" />
           <button
             onClick={() => setShowModal(true)}
-            className="sm:text-15 my-[10px] rounded-[6px] border-none bg-[#42b72a] px-4 py-0 text-[17px] font-bold leading-[48px] text-white  sm:w-[240px] sm:leading-[40px]"
+            className="my-[10px] rounded-[6px] border-none bg-[#42b72a] px-4 py-0 text-[17px] font-bold leading-[48px] text-white sm:w-[90%] sm:text-15 sm:leading-[40px]"
           >
             Create new account
           </button>

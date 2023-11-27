@@ -10,6 +10,7 @@ export const InputCustom: React.FC<IInput> = ({
   onClick,
   onFocus,
   onBlur,
+  styles
 }) => {
   return (
     <input
@@ -22,6 +23,7 @@ export const InputCustom: React.FC<IInput> = ({
       onFocus={onFocus}
       onClick={onClick}
       onBlur={onBlur}
+      style={styles}
     />
   );
 };

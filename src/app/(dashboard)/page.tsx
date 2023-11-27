@@ -1,3 +1,6 @@
+"use client";
+import { isMobile } from "react-device-detect";
+
 import {
   CreatePost,
   ListPost,
@@ -5,8 +8,14 @@ import {
   SideBarLeft,
   SideBarRight,
 } from "./components";
+// import dynamic from "next/dynamic";
+
+// const SideBarLeft = dynamic(() => import("./components/SideBarLeft"), {
+//   ssr: false,
+// });
 
 const Home = () => {
+  // console.log("isMobile", isMobile);
   return (
     <div className="flex">
       <SideBarLeft />

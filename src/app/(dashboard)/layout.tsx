@@ -125,9 +125,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             );
           })}
         </div>
-        <div className="flex w-[23%] items-center justify-end gap-2">
+        <div className="flex w-[23%] items-center justify-end gap-2 sm:grow">
           {/* icon Menu */}
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary sm:hidden">
+          <div className="flex aspect-square h-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary sm:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC]"
@@ -144,7 +144,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             </svg>
           </div>
           {/* icon message */}
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
+          <div className="flex aspect-square h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC]"
@@ -156,7 +156,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             </svg>
           </div>
           {/* icon notification */}
-          <div className="flex aspect-square w-10 cursor-pointer items-center justify-center rounded-full bg-hover-primary">
+          <div className="flex aspect-square h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-hover-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC] sm:h-5 sm:w-5"

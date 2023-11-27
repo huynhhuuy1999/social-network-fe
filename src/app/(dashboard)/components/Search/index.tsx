@@ -1,13 +1,16 @@
 "use client";
-
-import { InputCustom } from "@/components";
+// Library
 import Image from "next/image";
 import { useState } from "react";
-import { listUserSearch } from "./dummy";
+// Component
 import { CardSearch } from "..";
+import { InputCustom } from "@/components";
+// Constant
+import { listUserSearch } from "./dummy";
 
 export const Search = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
+  console.log("focus", isFocus);
   return (
     <div className="relative flex w-[23%] items-center py-2 sm:w-[320px]">
       {isFocus ? (
@@ -31,7 +34,13 @@ export const Search = () => {
         />
       )}
 
-      <div className="z-30 ml-2 flex h-10 w-[252px] items-center rounded-[50px] bg-[#3A3B3C] pl-2">
+      <div
+        className={`z-30 ml-2 flex h-10 w-[252px] items-center rounded-[50px] bg-[#3A3B3C] pl-2`}
+        // onClick={() => {
+        //   console.log("first");
+        //   setIsFocus(true);
+        // }}
+      >
         {!isFocus ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +60,7 @@ export const Search = () => {
 
         <InputCustom
           type="text"
-          classNames="bg-transparent border-none text-white text-13 placeholder:text-[#CCCCCC] z-10"
+          classNames={`bg-transparent border-none text-white text-13 placeholder:text-[#CCCCCC] z-10`}
           placeholder="Tìm kiếm trên facebook"
           onFocus={(e) => setIsFocus(true)}
           onBlur={(e) => setIsFocus(false)}
@@ -66,11 +75,11 @@ export const Search = () => {
         >
           <div className="h-14" />
           <div className="flex items-center justify-between bg-dark-primary px-4 pt-2">
-            <span className="sm:text-14 text-[1.0265rem] font-semibold text-primary-text ">
+            <span className="text-[1.0265rem] font-semibold text-primary-text sm:text-14 ">
               Tìm kiếm gần đây
             </span>
             <div className="cursor-pointer rounded-md px-2 py-1 hover:bg-hover-primary">
-              <span className="sm:text-14 text-[#5AA7FF]">Chỉnh sửa</span>
+              <span className="text-[#5AA7FF] sm:text-14">Chỉnh sửa</span>
             </div>
           </div>
           <div className="z-50 rounded-b-lg bg-dark-primary px-2 pb-2">
