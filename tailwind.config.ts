@@ -29,6 +29,7 @@ const config: Config = {
       "hover-second": "rgb(255 255 255 / 0.2)",
       line: "#393a3b",
       devider: "#3E4042",
+      "primary-active": "#1D85FC33",
     },
     fontSize: {
       12: "12px",

@@ -55,6 +55,9 @@ export interface ICardItemSidebar {
   icon?: ReactNode;
   onClick?: () => void;
   typeIcon?: number;
+  classNameText?: string;
+  classNameIcon?: string;
+  stylesIcon?: CSSProperties;
 }
 
 export interface ICardUserMess {
@@ -76,4 +79,5 @@ export interface IAvatar {
   className?: string;
   classNameImage?: string;
   borderWidth?: number;
+  onClick?: () => void;
 }

@@ -7,14 +7,15 @@ import { TYPE_ICON } from "@/constants/enum";
 
 export const CardItemSidebar: React.FC<ICardItemSidebar> = ({
   name,
-  link,
-  isAvartar = false,
   arrowRight,
   bgPosition = [],
   bgSize = [],
   icon,
   typeIcon,
   onClick,
+  classNameIcon,
+  classNameText,
+  stylesIcon,
 }) => {
   const route = useRouter();
   const renderTypeIcon = (type?: number) => {
@@ -23,6 +24,10 @@ export const CardItemSidebar: React.FC<ICardItemSidebar> = ({
         return "eventIcon.png";
       case TYPE_ICON.MESSAGE:
         return "messageIcon.png";
+      case TYPE_ICON.DIRECTION:
+        return "directionIcon.png";
+      case TYPE_ICON.NOTIFICATION:
+        return "notificationIcon.png";
       default:
         return "homeIcon.png";
     }
@@ -42,17 +47,20 @@ export const CardItemSidebar: React.FC<ICardItemSidebar> = ({
           className={`mr-3 flex aspect-square w-9 items-center justify-center`}
         >
           <i
-            className={`aspect-square h-9 bg-no-repeat`}
+            className={`aspect-square h-9 bg-no-repeat ${classNameIcon}`}
             style={{
               backgroundPosition: `${bgPosition[0]}px ${bgPosition[1]}px`,
               backgroundSize: `${bgSize[0]}px ${bgSize[1]}px`,
               backgroundImage: `url(/icon/${renderTypeIcon(typeIcon)})`,
+              ...stylesIcon,
             }}
           />
         </div>
       )}
       <div className="grow">
-        <span className="text-[0.9375rem] font-semibold leading-[1.33] sm:text-sm">
+        <span
+          className={`sm:text-sm text-[0.9375rem] font-semibold leading-[1.33] ${classNameText}`}
+        >
           {name}
         </span>
       </div>

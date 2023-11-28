@@ -8,6 +8,7 @@ export const Avatar: React.FC<IAvatar> = ({
   className,
   borderWidth,
   classNameImage,
+  onClick,
 }) => {
   return (
     <div
@@ -29,6 +30,7 @@ export const Avatar: React.FC<IAvatar> = ({
           ? width
           : 40,
       }}
+      onClick={onClick}
     >
       {borderWidth ? (
         <div
@@ -37,7 +39,7 @@ export const Avatar: React.FC<IAvatar> = ({
           }px] items-center justify-center rounded-full bg-primary`}
         >
           <Image
-            src={src || ""}
+            src={src || "/icon/unknowAvatar.png"}
             alt=""
             width={width || 40}
             height={width || 40}
@@ -48,7 +50,7 @@ export const Avatar: React.FC<IAvatar> = ({
         </div>
       ) : (
         <Image
-          src={src}
+          src={src || "/icon/unknowAvatar.png"}
           alt=""
           width={width}
           height={height}

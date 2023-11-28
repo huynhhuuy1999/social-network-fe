@@ -10,7 +10,7 @@ import { listUserSearch } from "./dummy";
 
 export const Search = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
-  console.log("focus", isFocus);
+
   return (
     <div className="relative flex w-[23%] items-center py-2 sm:w-[320px]">
       {isFocus ? (

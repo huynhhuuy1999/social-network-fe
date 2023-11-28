@@ -7,3 +7,6 @@ export * from "./ListPost";
 export * from "./ListStory";
 export * from "./CreatePost";
 export * from "./CardStory";
+export * from "./Notification";
+export * from "./CardNotification";
+export * from "./OptionOnHeader";

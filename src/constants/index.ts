@@ -117,6 +117,24 @@ export const SIDEBAR_HOME_ADVANCED: ICardItemSidebar[] = [
   },
 ];
 
+export const ListOptionHeader: ICardItemSidebar[] = [
+  {
+    bgPosition: [-154, -110],
+    bgSize: [190, 186],
+    name: "Cài đặt & quyền riêng tư",
+    link: "/",
+    typeIcon: TYPE_ICON.DIRECTION,
+    arrowRight: true,
+  },
+  {
+    bgPosition: [0, -440],
+    bgSize: [22, 1084],
+    name: "Đăng xuất",
+    link: "/",
+    typeIcon: TYPE_ICON.NOTIFICATION,
+  },
+];
+
 export const ListReact = [
   {
     src: "/icon/svg/like.svg",

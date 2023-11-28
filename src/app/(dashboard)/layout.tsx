@@ -1,18 +1,17 @@
 "use client";
 
 // Library
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 // Component
-import { Search } from "./components";
+import { Notification, OptionOnHeader, Search } from "./components";
 //Constant
-import { TAB_ACTIVE } from "@/constants";
 import { Avatar } from "@/components";
+import { TAB_ACTIVE } from "@/constants";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
-  const router = useRouter();
   const [tabActive, setTabActive] = useState<number>(TAB_ACTIVE.HOME);
+  const [activeNoti, setActiveNoti] = useState<boolean>(false);
+  const [activeAvatar, setActiveAvatar] = useState<boolean>(false);
 
   const listIcon = useMemo(() => {
     return [
@@ -156,21 +155,43 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             </svg>
           </div>
           {/* icon notification */}
-          <div className="flex aspect-square h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full bg-hover-primary">
+          <div
+            className={`relative flex aspect-square h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full ${
+              activeNoti ? "bg-primary-active" : "bg-hover-primary"
+            }`}
+            onClick={() => {
+              setActiveNoti(true);
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC] sm:h-5 sm:w-5"
               viewBox="0 0 20 20"
-              fill="currentColor"
+              fill={activeNoti ? "#0866FF" : "#CCCCCC"}
             >
               <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
             </svg>
+            {activeNoti ? (
+              <Notification
+                isShow={activeNoti}
+                setIsShow={(value) => setActiveNoti(value)}
+              />
+            ) : null}
           </div>
-          <Avatar
-            src={"https://picsum.photos/200"}
-            className="sm:!h-9 sm:!w-9"
-            classNameImage="sm:!h-9 sm:!w-9"
-          />
+          <div className="relative">
+            <Avatar
+              src={"https://picsum.photos/200"}
+              className="sm:!h-9 sm:!w-9"
+              classNameImage="sm:!h-9 sm:!w-9"
+              onClick={() => setActiveAvatar(true)}
+            />
+            {activeAvatar ? (
+              <OptionOnHeader
+                isShow={activeAvatar}
+                setIsShow={(value) => setActiveAvatar(value)}
+              />
+            ) : null}
+          </div>
         </div>
       </div>
       {children}
