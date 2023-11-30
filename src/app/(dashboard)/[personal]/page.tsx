@@ -1,5 +1,5 @@
+import { PersonalModule } from "@/modules/Personal";
 import React from "react";
-import { InfoDefault } from "./components";
 
 interface IPersonal {
   params: {
@@ -11,7 +11,7 @@ const Personal: React.FC<IPersonal> = ({ params }) => {
   console.log("first");
   return (
     <div>
-      <InfoDefault />
+      <PersonalModule />
     </div>
   );
 };

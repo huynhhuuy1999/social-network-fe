@@ -3,14 +3,19 @@
 // Library
 import { ReactNode, useMemo, useState } from "react";
 // Component
-import { Notification, OptionOnHeader, Search } from "./components";
-//Constant
+import {
+  Notification,
+  OptionOnHeader,
+  Search,
+} from "@/modules/Home/components";
 import { Avatar } from "@/components";
+//Constant
+
 import { TAB_ACTIVE } from "@/constants";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [tabActive, setTabActive] = useState<number>(TAB_ACTIVE.HOME);
-  const [activeNoti, setActiveNoti] = useState<boolean>(false);
+  const [activeNotification, setActiveNotification] = useState<boolean>(false);
   const [activeAvatar, setActiveAvatar] = useState<boolean>(false);
 
   const listIcon = useMemo(() => {
@@ -157,24 +162,24 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           {/* icon notification */}
           <div
             className={`relative flex aspect-square h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full ${
-              activeNoti ? "bg-primary-active" : "bg-hover-primary"
+              activeNotification ? "bg-primary-active" : "bg-hover-primary"
             }`}
             onClick={() => {
-              setActiveNoti(true);
+              setActiveNotification(true);
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-[#CCCCCC] sm:h-5 sm:w-5"
               viewBox="0 0 20 20"
-              fill={activeNoti ? "#0866FF" : "#CCCCCC"}
+              fill={activeNotification ? "#0866FF" : "#CCCCCC"}
             >
               <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
             </svg>
-            {activeNoti ? (
+            {activeNotification ? (
               <Notification
-                isShow={activeNoti}
-                setIsShow={(value) => setActiveNoti(value)}
+                isShow={activeNotification}
+                setIsShow={(value) => setActiveNotification(value)}
               />
             ) : null}
           </div>
