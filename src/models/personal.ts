@@ -1,0 +1,3 @@
+interface ICoverImage {
+  src: string;
+}

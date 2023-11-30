@@ -3,12 +3,14 @@ import React, { useEffect, useRef } from "react";
 import { CardItemSidebar } from "../CardItemSidebar";
 import { Avatar } from "@/components";
 import { ListOptionHeader } from "@/constants";
+import { useRouter } from "next/navigation";
 
 export const OptionOnHeader: React.FC<IOptionModal> = ({
   isShow,
   setIsShow,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const route = useRouter();
 
   useEffect(() => {
     if (isShow) {
@@ -45,6 +47,7 @@ export const OptionOnHeader: React.FC<IOptionModal> = ({
         }
         name={"Huỳnh Hữu Ý"}
         link=""
+        onClick={() => route.push("/huynhhuuy1999")}
       />
       <hr className="mb-2 text-line" />
       {ListOptionHeader.map((value, index) => {
