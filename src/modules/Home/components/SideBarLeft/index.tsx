@@ -1,6 +1,7 @@
 "use client";
 // Library
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 // constants
 import { SIDEBAR_HOME_ADVANCED, SIDEBAR_HOME_DEFAULT } from "@/constants";
 //Component
@@ -8,9 +9,11 @@ import { Avatar, SideBar } from "@/components";
 import { CardItemSidebar } from "../CardItemSidebar";
 
 export const SideBarLeft = () => {
+  const route = useRouter();
   const [isMore, setIsMore] = useState<boolean>(false);
+
   return (
-    <SideBar className="left-0">
+    <SideBar className="left-0 mt-2">
       <div>
         <CardItemSidebar
           icon={
@@ -23,6 +26,7 @@ export const SideBarLeft = () => {
           }
           name={"Huỳnh Hữu Ý"}
           link=""
+          onClick={() => route.push("/huynhhuuy1999")}
         />
         {SIDEBAR_HOME_DEFAULT.map((value, key) => {
           return (
