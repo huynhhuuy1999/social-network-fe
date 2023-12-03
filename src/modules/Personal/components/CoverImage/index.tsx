@@ -27,7 +27,7 @@ export const CoverImage: React.FC<ICoverImage> = ({ src }) => {
       className={`relative flex max-h-[60vh] w-full items-center justify-center sm:max-h-[50vh]`}
       style={{ background: color }}
     >
-      <div className="z-10 w-[70%] rounded-md sm:w-full sm:rounded-none">
+      <div className="z-10 w-[70%] rounded-md sm:w-full sm:rounded-none md:w-full">
         <img
           src={src || ""}
           alt=""

@@ -1,10 +1,10 @@
 "use client";
 
 // Library
-import React, { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 // COmponent
-import { Avatar, Modal } from "@/components";
+import { Avatar } from "@/components";
 import { ModalCreate } from "./ModalCreate";
 
 export const CreatePost = () => {
