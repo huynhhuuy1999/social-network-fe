@@ -1,5 +1,5 @@
 import { ICardItemSidebar } from "@/models/components";
-import { TYPE_ICON, TYPE_REACT } from "./enum";
+import { TYPE_HEADER_PERSONAL, TYPE_ICON, TYPE_REACT } from "./enum";
 
 export const MONTH = [
   "Jan",
@@ -210,5 +210,32 @@ export const actionItemPost = [
     icon: "/icon/iconBlock.png",
     title: "Chặn trang cá nhân của ",
     description: "Các bạn sẽ không thể nhìn thấy hoặc liên hệ với nhau.",
+  },
+];
+
+export const HeaderTextPersonal = [
+  {
+    name: "Bài viết",
+    type: TYPE_HEADER_PERSONAL.POST,
+  },
+  {
+    name: "Giới thiệu",
+    type: TYPE_HEADER_PERSONAL.INTRODUCE,
+  },
+  {
+    name: "Bạn bè",
+    type: TYPE_HEADER_PERSONAL.FRIEND,
+  },
+  {
+    name: "Ảnh",
+    type: TYPE_HEADER_PERSONAL.IMAGE,
+  },
+  {
+    name: "Video",
+    type: TYPE_HEADER_PERSONAL.VIDEO,
+  },
+  {
+    name: "Reels",
+    type: TYPE_HEADER_PERSONAL.REEL,
   },
 ];

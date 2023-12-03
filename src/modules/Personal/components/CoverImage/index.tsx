@@ -34,7 +34,7 @@ export const CoverImage: React.FC<ICoverImage> = ({ src }) => {
           className="max-h-[60vh] w-full overflow-hidden rounded-md object-cover sm:max-h-[50vh] sm:rounded-none"
         />
       </div>
-      <div className="absolute bottom-5 right-5 z-10 flex h-9 cursor-pointer items-center gap-2 rounded-md bg-hover-primary px-3 hover:bg-hover-second">
+      <div className="absolute bottom-5 right-[calc(15%+20px)] z-10 flex h-9 cursor-pointer items-center gap-2 rounded-md bg-hover-primary px-3 hover:bg-hover-second">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
