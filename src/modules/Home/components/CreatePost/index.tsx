@@ -3,15 +3,19 @@
 // Library
 import Image from "next/image";
 import { useState } from "react";
-// COmponent
+// Component
 import { Avatar } from "@/components";
 import { ModalCreate } from "./ModalCreate";
+// interface
+import { ICreatePost } from "@/models/post";
 
-export const CreatePost = () => {
+export const CreatePost: React.FC<ICreatePost> = ({ className }) => {
   const [isShowModalCreatePost, setIsShowModalCreatePost] =
     useState<boolean>(false);
   return (
-    <div className="mt-5 rounded-lg bg-dark-primary px-3 py-3 sm:rounded-none">
+    <div
+      className={`mt-5 rounded-lg bg-dark-primary px-3 py-3 sm:rounded-none ${className}`}
+    >
       <div
         className="flex gap-2"
         onClick={() => setIsShowModalCreatePost(!isShowModalCreatePost)}

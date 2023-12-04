@@ -8,7 +8,6 @@ interface IPersonal {
 }
 
 const Personal: React.FC<IPersonal> = ({ params }) => {
-  console.log("first");
   return (
     <div>
       <PersonalModule />

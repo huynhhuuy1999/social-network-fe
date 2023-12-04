@@ -6,3 +6,4 @@ export * from "./InfoRight";
 export * from "./Introduce";
 export * from "./ImageInfo";
 export * from "./FriendInfo";
+export * from "./CardFriend";

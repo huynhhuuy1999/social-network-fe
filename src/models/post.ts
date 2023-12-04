@@ -7,3 +7,7 @@ export interface IImagePost {
   src: string;
   isBgColor?: boolean;
 }
+
+export interface ICreatePost {
+  className?: string;
+}

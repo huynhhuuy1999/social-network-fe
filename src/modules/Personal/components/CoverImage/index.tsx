@@ -24,17 +24,17 @@ export const CoverImage: React.FC<ICoverImage> = ({ src }) => {
 
   return (
     <div
-      className={`relative flex max-h-[60vh] w-full items-center justify-center sm:max-h-[50vh]`}
+      className={`relative flex max-h-[60vh] w-full items-center justify-center sm:max-h-[48vh] md:max-h-[48vh]`}
       style={{ background: color }}
     >
-      <div className="z-10 w-[70%] rounded-md sm:w-full sm:rounded-none md:w-full">
+      <div className="z-10 w-[70%] rounded-md sm:w-full sm:rounded-none md:w-full md:rounded-none">
         <img
           src={src || ""}
           alt=""
-          className="max-h-[60vh] w-full overflow-hidden rounded-md object-cover sm:max-h-[50vh] sm:rounded-none"
+          className="max-h-[60vh] w-full overflow-hidden rounded-md object-cover sm:max-h-[50vh] sm:rounded-none md:max-h-[50vh] md:rounded-none"
         />
       </div>
-      <div className="absolute bottom-5 right-[calc(15%+20px)] z-10 flex h-9 cursor-pointer items-center gap-2 rounded-md bg-hover-primary px-3 hover:bg-hover-second">
+      <div className="absolute bottom-5 right-[calc(15%+20px)] z-10 flex h-9 cursor-pointer items-center gap-2 rounded-md bg-hover-primary px-3 hover:bg-hover-second sm:right-5 md:right-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -54,7 +54,7 @@ export const CoverImage: React.FC<ICoverImage> = ({ src }) => {
             d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
           />
         </svg>
-        <span className="text-15 font-semibold text-white sm:hidden">
+        <span className="text-15 font-semibold text-white sm:hidden md:hidden">
           Chỉnh sửa ảnh bìa
         </span>
       </div>
