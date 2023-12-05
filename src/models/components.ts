@@ -81,3 +81,7 @@ export interface IAvatar {
   borderWidth?: number;
   onClick?: () => void;
 }
+
+export interface IPostItem {
+  className?: string;
+}

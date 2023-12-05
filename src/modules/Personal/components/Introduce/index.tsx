@@ -4,11 +4,11 @@ export const Introduce = () => {
   return (
     <div className="mt-2 rounded-lg bg-dark-primary p-3">
       <h3 className="text-[20px] font-bold">Giới thiệu</h3>
-      <span className="block text-center">Bé Phạm Minh Thư</span>
+      <span className="block text-center text-14">Bé Phạm Minh Thư</span>
       <button className="my-2 h-9 w-full rounded-lg bg-hover-primary text-14 font-semibold text-primary-text">
         Chỉnh sửa tiểu sử
       </button>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4">
         <div className="flex gap-2">
           <Image
             src={"/icon/eduIcon.png"}

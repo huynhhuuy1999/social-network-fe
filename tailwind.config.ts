@@ -41,10 +41,10 @@ const config: Config = {
     screens: {
       sm: { max: "700px" },
 
-      md: { min: "701px", max: "1023px" },
+      md: { min: "701px", max: "1024px" },
       // => @media (min-width: 701px and max-width: 1023px) { ... }
 
-      lg: { min: "1024px" },
+      lg: { min: "1025px" },
     },
   },
   plugins: [],
