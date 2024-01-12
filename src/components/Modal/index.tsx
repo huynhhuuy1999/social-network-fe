@@ -1,6 +1,6 @@
 "use client";
 import { IModal } from "@/models/components";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 export const Modal: React.FC<IModal> = ({
@@ -55,7 +55,7 @@ export const Modal: React.FC<IModal> = ({
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    fill="#000"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"

@@ -46,13 +46,13 @@ export const CardUser: React.FC<ICardUser> = ({ numNotiUnSeen, userName }) => {
         {numNotiUnSeen ? (
           <span
             style={{ boxShadow: "-1px 1px 2px 0 rgba(0, 0, 0, .3)" }}
-            className="text-13 absolute -right-1 -top-1 h-6 w-6 rounded-full bg-[#fa3e3e] text-center leading-6 text-white"
+            className="absolute -right-1 -top-1 h-6 w-6 rounded-full bg-[#fa3e3e] text-center text-13 leading-6 text-white"
           >
             {numNotiUnSeen}
           </span>
         ) : null}
       </div>
-      <div className="w-full rounded-b-lg bg-white p-3 text-center">
+      <div className="w-full rounded-b-lg bg-white p-3 text-center text-dark-primary">
         {userName}
       </div>
     </div>

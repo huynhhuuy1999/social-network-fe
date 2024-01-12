@@ -1,20 +1,38 @@
 //Library
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 // Constants
 import { MONTH } from "@/constants";
 // Utils
 import { createArrCustom } from "@/utils";
 //Component
 import { InputCustom, Modal, SelectCustom } from "@/components";
+import { RadioCustom } from "..";
 //types
 import { IFormCreateUser } from "@/models/login";
-import { RadioCustom } from "..";
+
+interface IFormValue {
+  email?: string;
+  password?: string;
+  firstName?: string;
+  surname?: string;
+  birthDate?: string;
+  gender?: number;
+}
 
 export const FormCreateUser: React.FC<IFormCreateUser> = ({
   show,
   setShow,
+  onSignUp,
 }) => {
+  const [formSignUp, setFormSignUp] = useState<IFormValue>({
+    birthDate: "",
+    email: "",
+    firstName: "",
+    gender: 1,
+    password: "",
+    surname: "",
+  });
   return (
     <Modal show={show} setShow={(value) => setShow?.(value)}>
       <div className="w-[432px] py-4">
@@ -30,15 +48,24 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
         <hr />
         <div className="px-2.5 py-3">
           <div className="flex gap-2">
-            <InputCustom placeholder="First name" />
+            <InputCustom
+              placeholder="First name"
+              onChange={(e) =>
+                setFormSignUp({ ...formSignUp, firstName: e.target.value })
+              }
+            />
             <InputCustom placeholder="Surname" />
           </div>
           <InputCustom
             classNames="mt-2"
             placeholder="Mobile number or email address"
           />
-          <InputCustom classNames="mt-2" placeholder="New password" />
-          <span className="text-12 mt-3 leading-[20px] text-[#606770]">
+          <InputCustom
+            classNames="mt-2"
+            placeholder="New password"
+            type="password"
+          />
+          <span className="mt-3 text-12 leading-[20px] text-[#606770]">
             Date of birth
           </span>
           <div className="flex gap-3">
@@ -64,7 +91,7 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
               classNames="h-[39.6px] "
             />
           </div>
-          <span className="text-12 mt-3 leading-[20px] text-[#606770]">
+          <span className="mt-3 text-12 leading-[20px] text-[#606770]">
             Gender
           </span>
           <div className="flex w-full gap-3 ">
@@ -97,7 +124,10 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
           </span>
         </div>
         <div className="flex justify-center">
-          <button className="h-9 w-[194px] rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white">
+          <button
+            className="h-9 w-[194px] rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white"
+            onClick={() => onSignUp?.(formSignUp)}
+          >
             Sign Up
           </button>
         </div>
@@ -105,3 +135,4 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
     </Modal>
   );
 };
+// export default FormCreateUser;

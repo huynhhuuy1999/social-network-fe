@@ -62,6 +62,7 @@ export const OptionOnHeader: React.FC<IOptionModal> = ({
             arrowRight={value?.arrowRight}
             classNameIcon="!h-5 aspect-square"
             stylesIcon={{ filter: "invert(89%) sepia(6%) hue-rotate(185deg)" }}
+            onClick={() => route.push(value.link)}
           />
         );
       })}

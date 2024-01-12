@@ -1,19 +1,30 @@
 "use client";
+import { registerApi } from "@/services/auth";
 import Image from "next/image";
+import { useState } from "react";
 import {
   CardAddUser,
   CardUser,
   FormAddAccount,
   FormCreateUser,
 } from "./components";
-import React, { useState } from "react";
-import { isMobile } from "react-device-detect";
 
 const Login = () => {
   const [accounts, setAccount] = useState<number[]>([1]);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false);
+  const onSignUp = async (value: any) => {
+    const data = await registerApi({
+      birthDate: "31/12/2000",
+      email: "huynhhuuy@gmail.com",
+      firstName: "yyy",
+      gender: 1,
+      password: "hihi",
+      surname: "huynh",
+    });
+    console.log("🚀 ~ onSignUp ~ data:", data);
+  };
   return (
     <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%] sm:block sm:px-4">
       <div className="flex justify-center pt-[10vh] md:hidden lg:hidden">
@@ -101,6 +112,7 @@ const Login = () => {
       <FormCreateUser
         show={showModal}
         setShow={(value) => setShowModal(value)}
+        onSignUp={onSignUp}
       />
       <FormAddAccount
         show={showModalAddUser}

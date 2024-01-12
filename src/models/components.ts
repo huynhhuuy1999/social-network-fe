@@ -1,5 +1,6 @@
 import {
   CSSProperties,
+  ChangeEventHandler,
   FocusEventHandler,
   MouseEventHandler,
   ReactNode,
@@ -37,6 +38,7 @@ export interface IInput {
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   styles?: CSSProperties;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 export interface ISidebar {

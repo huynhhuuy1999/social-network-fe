@@ -10,7 +10,8 @@ export const InputCustom: React.FC<IInput> = ({
   onClick,
   onFocus,
   onBlur,
-  styles
+  styles,
+  onChange,
 }) => {
   return (
     <input
@@ -19,11 +20,12 @@ export const InputCustom: React.FC<IInput> = ({
       id={id}
       type={type}
       placeholder={placeholder}
-      className={`h-[39.6px]  w-full rounded-[5px] border border-[#ccd0d5] bg-[#f5f6f7] px-2 ${classNames}`}
+      className={`h-[39.6px]  w-full rounded-[5px] border border-[#ccd0d5] bg-[#f5f6f7] px-2 text-dark-primary ${classNames}`}
       onFocus={onFocus}
       onClick={onClick}
       onBlur={onBlur}
       style={styles}
+      onChange={onChange}
     />
   );
 };

@@ -130,7 +130,7 @@ export const ListOptionHeader: ICardItemSidebar[] = [
     bgPosition: [0, -440],
     bgSize: [22, 1084],
     name: "Đăng xuất",
-    link: "/",
+    link: "/login",
     typeIcon: TYPE_ICON.NOTIFICATION,
   },
 ];

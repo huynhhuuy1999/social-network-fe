@@ -10,11 +10,11 @@ export const SelectCustom: React.FC<ISelect> = ({
     <select
       name={name}
       id={id}
-      className={`w-full cursor-pointer rounded-[5px] border border-[#ccd0d5] bg-[#f5f6f7] px-2 focus:outline-none ${classNames}`}
+      className={`w-full cursor-pointer rounded-[5px] border border-[#ccd0d5] bg-[#f5f6f7] px-2 text-dark-primary focus:outline-none ${classNames}`}
     >
       {options.map((v, i) => {
         return (
-          <option key={i} value={v.value}>
+          <option key={i} value={v.value} className="text-dark-primary">
             {v.label}
           </option>
         );

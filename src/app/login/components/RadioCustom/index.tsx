@@ -17,7 +17,7 @@ export const RadioCustom: React.FC<IRadioCustom> = ({
     <div
       className={`flex h-[39.6px] w-full cursor-pointer items-center justify-between rounded-[5px] border border-[#ccd0d5] px-2 ${classNames}`}
     >
-      <label className="grow cursor-pointer" htmlFor={id}>
+      <label className="grow cursor-pointer text-dark-primary" htmlFor={id}>
         {label}
       </label>
       <input type="radio" value={value} id={id} name={name} />
