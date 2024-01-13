@@ -8,7 +8,7 @@ export const FormAddAccount: React.FC<IFormAddAccount> = ({
   return (
     <Modal show={show} setShow={(value) => setShow?.(value)}>
       <div className="w-[366px] pb-4">
-        <h3 className="p-4 text-center text-[20px] leading-[24px]">
+        <h3 className="p-4 text-center text-[20px] leading-[24px] text-dark-primary">
           Log in to Facebook
         </h3>
         <hr />

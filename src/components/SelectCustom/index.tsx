@@ -5,12 +5,16 @@ export const SelectCustom: React.FC<ISelect> = ({
   id,
   name,
   options = [],
+  onChange,
+  value,
 }) => {
   return (
     <select
       name={name}
       id={id}
       className={`w-full cursor-pointer rounded-[5px] border border-[#ccd0d5] bg-[#f5f6f7] px-2 text-dark-primary focus:outline-none ${classNames}`}
+      onChange={onChange}
+      value={value || ""}
     >
       {options.map((v, i) => {
         return (

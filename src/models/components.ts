@@ -25,6 +25,8 @@ export interface ISelect {
     value?: number | string;
     label?: string | number;
   }[];
+  onChange?: ChangeEventHandler;
+  value?: string | null;
 }
 
 export interface IInput {

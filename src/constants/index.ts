@@ -2,6 +2,7 @@ import { ICardItemSidebar } from "@/models/components";
 import { TYPE_HEADER_PERSONAL, TYPE_ICON, TYPE_REACT } from "./enum";
 
 export const MONTH = [
+  "Select Month",
   "Jan",
   "Feb",
   "Mar",

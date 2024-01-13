@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 
 export const createArrCustom = (numFrom: number, numTo: number): number[] => {
-  let arr: number[] = [];
+  let arr: number[] = [0];
   for (let i = numFrom; i <= numTo; i++) {
     arr.push(i);
   }

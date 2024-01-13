@@ -31,6 +31,7 @@ const config: Config = {
       line: "#393a3b",
       devider: "#3E4042",
       "primary-active": "#1D85FC33",
+      error: "#fa3e3e",
     },
     fontSize: {
       12: "12px",

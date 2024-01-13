@@ -1,9 +1,12 @@
+import { MouseEventHandler } from "react";
+
 interface IRadioCustom {
   id: string;
   label: string;
   value: number | string;
   classNames?: string;
   name: string;
+  onClick?: MouseEventHandler<HTMLInputElement>;
 }
 
 export const RadioCustom: React.FC<IRadioCustom> = ({
@@ -12,6 +15,7 @@ export const RadioCustom: React.FC<IRadioCustom> = ({
   value,
   classNames,
   name,
+  onClick,
 }) => {
   return (
     <div
@@ -20,7 +24,7 @@ export const RadioCustom: React.FC<IRadioCustom> = ({
       <label className="grow cursor-pointer text-dark-primary" htmlFor={id}>
         {label}
       </label>
-      <input type="radio" value={value} id={id} name={name} />
+      <input type="radio" value={value} id={id} name={name} onClick={onClick} />
     </div>
   );
 };

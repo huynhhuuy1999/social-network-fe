@@ -65,6 +65,7 @@ export const Modal: React.FC<IModal> = ({
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M6 18L18 6M6 6l12 12"
+                      className="text-[#333]"
                     />
                   </svg>
                 </div>

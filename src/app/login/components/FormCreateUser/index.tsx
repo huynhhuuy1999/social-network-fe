@@ -1,6 +1,6 @@
 //Library
-import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
+import * as yup from "yup";
 // Constants
 import { MONTH } from "@/constants";
 // Utils
@@ -10,6 +10,7 @@ import { InputCustom, Modal, SelectCustom } from "@/components";
 import { RadioCustom } from "..";
 //types
 import { IFormCreateUser } from "@/models/login";
+import { useFormik } from "formik";
 
 interface IFormValue {
   email?: string;
@@ -25,14 +26,45 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
   setShow,
   onSignUp,
 }) => {
-  const [formSignUp, setFormSignUp] = useState<IFormValue>({
-    birthDate: "",
+  const initialValues = {
     email: "",
     firstName: "",
-    gender: 1,
+    gender: undefined,
     password: "",
     surname: "",
+    day: "",
+    month: "",
+    year: "",
+  };
+  const yupObject = yup.object({
+    email: yup.string().required(),
+    firstName: yup.string().required(),
+    surname: yup.string().required(),
+    password: yup.string().required(),
+    day: yup.string().required(),
+    month: yup.string().required(),
+    year: yup.string().required(),
+    gender: yup.string().required(),
   });
+  const formik = useFormik({
+    initialValues,
+    validationSchema: yupObject,
+    onSubmit: (values) => {
+      console.log("first", values);
+    },
+    validateOnChange: false,
+    validateOnBlur: false,
+  });
+  const {
+    handleChange,
+    errors,
+    touched,
+    handleSubmit,
+    values,
+    setFieldValue,
+    setFieldTouched,
+  } = formik;
+  console.log("eee", errors);
   return (
     <Modal show={show} setShow={(value) => setShow?.(value)}>
       <div className="w-[432px] py-4">
@@ -46,91 +78,170 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
         </div>
 
         <hr />
-        <div className="px-2.5 py-3">
-          <div className="flex gap-2">
+
+        <form onSubmit={handleSubmit}>
+          <div className="px-2.5 py-3">
+            <div className="flex gap-2">
+              <InputCustom
+                placeholder="First name"
+                name="firstName"
+                onChange={handleChange}
+                value={values.firstName}
+                classNames={
+                  touched && errors && errors.firstName ? "border-error" : ""
+                }
+              />
+
+              <InputCustom
+                placeholder="Surname"
+                name="surname"
+                onChange={handleChange}
+                value={values.surname}
+                classNames={
+                  touched && errors && errors.surname ? "border-error" : ""
+                }
+              />
+            </div>
             <InputCustom
-              placeholder="First name"
-              onChange={(e) =>
-                setFormSignUp({ ...formSignUp, firstName: e.target.value })
-              }
+              classNames={`mt-2 ${
+                touched && errors && errors.email ? "border-error" : ""
+              }`}
+              placeholder="Email address"
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={values.email}
             />
-            <InputCustom placeholder="Surname" />
-          </div>
-          <InputCustom
-            classNames="mt-2"
-            placeholder="Mobile number or email address"
-          />
-          <InputCustom
-            classNames="mt-2"
-            placeholder="New password"
-            type="password"
-          />
-          <span className="mt-3 text-12 leading-[20px] text-[#606770]">
-            Date of birth
-          </span>
-          <div className="flex gap-3">
-            <SelectCustom
-              name="day"
-              options={Array.from({ length: 31 }, (v: number, k: number) => {
-                return { label: k + 1, value: k + 1 };
-              })}
-              classNames="h-[39.6px]"
+            <InputCustom
+              classNames={`mt-2 ${
+                touched && errors && errors.password ? "border-error" : ""
+              }`}
+              placeholder="New password"
+              type="password"
+              name="password"
+              onChange={handleChange}
+              value={values.password}
             />
-            <SelectCustom
-              name="month"
-              options={MONTH.map((v) => {
-                return { value: v, label: v };
-              })}
-              classNames="h-[39.6px]"
-            />
-            <SelectCustom
-              name="year"
-              options={createArrCustom(1993, 2023).map((v) => {
-                return { value: v, label: v };
-              })}
-              classNames="h-[39.6px] "
-            />
-          </div>
-          <span className="mt-3 text-12 leading-[20px] text-[#606770]">
-            Gender
-          </span>
-          <div className="flex w-full gap-3 ">
-            <RadioCustom id="male" value={1} label="Male" name="gender" />
-            <RadioCustom id="famale" value={0} label="Famale" name="gender" />
-            <RadioCustom id="custom" value={2} label="Custom" name="gender" />
-          </div>
-          <span className="mt-2 block text-[11px] text-[#777]">
-            People who use our service may have uploaded your contact
-            information to Facebook.{" "}
-            <span className="cursor-pointer text-[#385898] hover:underline">
-              Learn more.
+            <span className="mt-3 text-12 leading-[20px] text-[#606770]">
+              Date of birth
             </span>
-          </span>
-          <span className="mt-2 block text-[11px] text-[#777]">
-            By clicking Sign Up, you agree to our{" "}
-            <span className="cursor-pointer text-[#385898] hover:underline">
-              Terms
-            </span>{" "}
-            ,
-            <span className="cursor-pointer text-[#385898] hover:underline">
-              Privacy Policy
-            </span>{" "}
-            and{" "}
-            <span className="cursor-pointer text-[#385898] hover:underline">
-              Cookies Policy
+            <div className="flex gap-3">
+              <SelectCustom
+                name="day"
+                options={Array.from({ length: 32 }, (v: number, k: number) => {
+                  return {
+                    label: k === 0 ? "Select day" : k,
+                    value: k === 0 ? "" : k,
+                  };
+                })}
+                classNames={`h-[39.6px] ${
+                  touched && errors && errors.day ? "border-error" : ""
+                }`}
+                onChange={handleChange}
+                value={values.day}
+              />
+              <SelectCustom
+                name="month"
+                options={MONTH.map((v) => {
+                  return {
+                    value: v === "Select Month" ? "" : v,
+                    label: v === "Select Month" ? "Select Month" : v,
+                  };
+                })}
+                classNames={`h-[39.6px] ${
+                  touched && errors && errors.month ? "border-error" : ""
+                }`}
+                onChange={handleChange}
+                value={values.month}
+              />
+              <SelectCustom
+                name="year"
+                options={createArrCustom(1993, 2023).map((v) => {
+                  return {
+                    value: !v ? "" : v,
+                    label: !v ? "Select year" : v,
+                  };
+                })}
+                classNames={`h-[39.6px] ${
+                  touched && errors && errors.year ? "border-error" : ""
+                }`}
+                onChange={handleChange}
+                value={values.year}
+              />
+            </div>
+            <span className="mt-3 text-12 leading-[20px] text-[#606770]">
+              Gender
             </span>
-            . You may receive SMS notifications from us and can opt out at any
-            time.
-          </span>
-        </div>
-        <div className="flex justify-center">
-          <button
-            className="h-9 w-[194px] rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white"
-            onClick={() => onSignUp?.(formSignUp)}
-          >
-            Sign Up
-          </button>
-        </div>
+            <div className="flex w-full gap-3 ">
+              <RadioCustom
+                id="male"
+                value={1}
+                label="Male"
+                name="gender"
+                classNames={errors && errors.gender ? "border-error" : ""}
+                onClick={(e: any) => {
+                  setFieldValue("gender", e.target.value);
+                }}
+              />
+              <RadioCustom
+                id="female"
+                value={2}
+                label="Female"
+                name="gender"
+                classNames={
+                  touched && errors && errors.gender ? "border-error" : ""
+                }
+                onClick={(e: any) => {
+                  setFieldValue("gender", e.target.value);
+                }}
+              />
+              <RadioCustom
+                id="custom"
+                value={3}
+                label="Custom"
+                name="gender"
+                classNames={
+                  touched && errors && errors.gender ? "border-error" : ""
+                }
+                onClick={(e: any) => {
+                  setFieldValue("gender", e.target.value);
+                }}
+              />
+            </div>
+            <span className="mt-2 block text-[11px] text-[#777]">
+              People who use our service may have uploaded your contact
+              information to Facebook.{" "}
+              <span className="cursor-pointer text-[#385898] hover:underline">
+                Learn more.
+              </span>
+            </span>
+            <span className="mt-2 block text-[11px] text-[#777]">
+              By clicking Sign Up, you agree to our{" "}
+              <span className="cursor-pointer text-[#385898] hover:underline">
+                Terms
+              </span>{" "}
+              ,
+              <span className="cursor-pointer text-[#385898] hover:underline">
+                Privacy Policy
+              </span>{" "}
+              and{" "}
+              <span className="cursor-pointer text-[#385898] hover:underline">
+                Cookies Policy
+              </span>
+              . You may receive SMS notifications from us and can opt out at any
+              time.
+            </span>
+          </div>
+          <div className="flex justify-center">
+            <button
+              className="h-9 w-[194px] rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white"
+              // onClick={() => onSignUp?.(formSignUp)}
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
       </div>
     </Modal>
   );
