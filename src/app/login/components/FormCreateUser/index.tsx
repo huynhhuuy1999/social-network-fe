@@ -67,12 +67,12 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
   console.log("eee", errors);
   return (
     <Modal show={show} setShow={(value) => setShow?.(value)}>
-      <div className="w-[432px] py-4">
-        <div className="px-2.5 ">
-          <h3 className="text-[32px] font-bold leading-[38px] text-[#1c1e21]">
+      <div className="w-[432px] py-4 sm:w-full">
+        <div className="px-2.5">
+          <h3 className="text-[32px] font-bold leading-[38px] text-[#1c1e21] sm:text-[28px]">
             Sign Up
           </h3>
-          <span className="text-[15px] leading-[24px] text-[#606770]">
+          <span className="text-15 leading-[24px] text-[#606770]">
             {`It's quick and easy.`}
           </span>
         </div>
@@ -87,9 +87,9 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
                 name="firstName"
                 onChange={handleChange}
                 value={values.firstName}
-                classNames={
+                classNames={`${
                   touched && errors && errors.firstName ? "border-error" : ""
-                }
+                }`}
               />
 
               <InputCustom
