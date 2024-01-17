@@ -55,16 +55,9 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
     validateOnChange: false,
     validateOnBlur: false,
   });
-  const {
-    handleChange,
-    errors,
-    touched,
-    handleSubmit,
-    values,
-    setFieldValue,
-    setFieldTouched,
-  } = formik;
-  console.log("eee", errors);
+  const { handleChange, errors, touched, handleSubmit, values, setFieldValue } =
+    formik;
+
   return (
     <Modal show={show} setShow={(value) => setShow?.(value)}>
       <div className="w-[432px] py-4 sm:w-full">
@@ -235,7 +228,6 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
           <div className="flex justify-center">
             <button
               className="h-9 w-[194px] rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white"
-              // onClick={() => onSignUp?.(formSignUp)}
               type="submit"
             >
               Sign Up
