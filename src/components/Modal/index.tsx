@@ -40,6 +40,7 @@ export const Modal: React.FC<IModal> = ({
               style={{
                 backgroundColor: backgroundColorOverlay,
               }}
+              onTouchMove={(e) => e.preventDefault()}
             >
               <div
                 className={`modal__container relative ${className}`}

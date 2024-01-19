@@ -6,7 +6,8 @@ export interface ICardUser {
 export interface IFormCreateUser {
   show: boolean;
   setShow?: (value: boolean) => void;
-  onSignUp?: (value?: any) => void;
+  onSignUp?: (value: RegisterParams) => void;
+  isLoading?: boolean;
 }
 
 export interface IFormAddAccount {
@@ -24,5 +25,5 @@ export interface RegisterParams {
   firstName: string;
   surname: string;
   birthDate: string;
-  gender: number;
+  gender?: number;
 }

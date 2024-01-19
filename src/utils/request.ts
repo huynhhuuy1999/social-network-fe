@@ -24,7 +24,7 @@ enum REQUEST_TIMEOUT {
 let refreshTokenRequest: null | AxiosPromise = null;
 
 const request = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_APP_API_URL,
+  baseURL: process.env.NEXT_PUBLIC_DEV_APP_API_URL,
   timeout: REQUEST_TIMEOUT.default,
 });
 
@@ -74,7 +74,7 @@ const interceptorRequest = async (config: AxiosRequestConfig | any) => {
 
 const interceptorResponse = (response: AxiosResponse) => {
   if (response && response.data) {
-    return response.data;
+    return { ...response.data, status: response.status };
   }
 
   return response;

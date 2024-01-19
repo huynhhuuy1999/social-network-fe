@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "react-toastify/dist/ReactToastify.css";
 
 * {
   color: #e4e6eb;
@@ -26,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999999999999;
+  z-index: 999;
 }
 .modal__container {
   width: max-content;

@@ -1,30 +1,22 @@
 //Library
 import React from "react";
 import * as yup from "yup";
+import { useFormik } from "formik";
 // Constants
 import { MONTH } from "@/constants";
 // Utils
 import { createArrCustom } from "@/utils";
 //Component
-import { InputCustom, Modal, SelectCustom } from "@/components";
+import { InputCustom, Loader, Modal, SelectCustom } from "@/components";
 import { RadioCustom } from "..";
 //types
 import { IFormCreateUser } from "@/models/login";
-import { useFormik } from "formik";
-
-interface IFormValue {
-  email?: string;
-  password?: string;
-  firstName?: string;
-  surname?: string;
-  birthDate?: string;
-  gender?: number;
-}
 
 export const FormCreateUser: React.FC<IFormCreateUser> = ({
   show,
   setShow,
   onSignUp,
+  isLoading,
 }) => {
   const initialValues = {
     email: "",
@@ -50,7 +42,18 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
     initialValues,
     validationSchema: yupObject,
     onSubmit: (values) => {
-      console.log("first", values);
+      const { day, email, firstName, gender, month, password, surname, year } =
+        values;
+      const birthDate = `${day}/${month}/${year}`;
+      onSignUp &&
+        onSignUp({
+          birthDate,
+          email,
+          firstName,
+          gender: Number(gender),
+          password,
+          surname,
+        });
     },
     validateOnChange: false,
     validateOnBlur: false,
@@ -135,9 +138,14 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
               />
               <SelectCustom
                 name="month"
-                options={MONTH.map((v) => {
+                options={MONTH.map((v, index) => {
                   return {
-                    value: v === "Select Month" ? "" : v,
+                    value:
+                      v === "Select Month"
+                        ? ""
+                        : index < 10
+                        ? `0${index}`
+                        : index,
                     label: v === "Select Month" ? "Select Month" : v,
                   };
                 })}
@@ -227,10 +235,21 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
           </div>
           <div className="flex justify-center">
             <button
-              className="h-9 w-[194px] rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white"
+              className={`${
+                isLoading
+                  ? "pointer-events-none cursor-not-allowed opacity-70"
+                  : ""
+              } flex h-9 w-[194px] items-center justify-center rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white`}
               type="submit"
             >
-              Sign Up
+              {isLoading ? (
+                <>
+                  <Loader />
+                  <span className="ml-1">Sign Up</span>{" "}
+                </>
+              ) : (
+                <span>Sign Up</span>
+              )}
             </button>
           </div>
         </form>

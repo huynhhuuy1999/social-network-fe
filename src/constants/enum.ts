@@ -30,3 +30,11 @@ export enum TYPE_HEADER_PERSONAL {
   VIDEO = 5,
   REEL = 6,
 }
+
+export enum ToastEnums {
+  success = "SUCCESS",
+  error = "ERROR",
+  warning = "WARNING",
+  info = "INFO",
+  custom = "CUSTOM",
+}

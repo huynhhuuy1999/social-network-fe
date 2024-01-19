@@ -1,37 +1,49 @@
 "use client";
+import { ToastEnums } from "@/constants/enum";
+import { useAppSelector } from "@/hooks";
+import { RegisterParams } from "@/models/login";
 import { registerApi } from "@/services/auth";
+import { isLoadingSelector } from "@/store/reducers/testSlice";
+import { ShowNotificationToast } from "@/utils/toastNotify";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CardAddUser,
   CardUser,
   FormAddAccount,
   FormCreateUser,
 } from "./components";
-import { useAppSelector } from "@/hooks";
-import { isLoadingSelector } from "@/store/reducers/testSlice";
-import StoreProvider from "@/store/storeProvider";
 
 const Login = () => {
+  const loading = useAppSelector(isLoadingSelector);
   const [accounts, setAccount] = useState<number[]>([1]);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false);
-  const loading = useAppSelector(isLoadingSelector);
-  console.log("🚀 ~ Login ~ loading:", loading);
-  const onSignUp = async (value: any) => {
-    // const data = await registerApi({
-    //   birthDate: "31/12/2000",
-    //   email: "huynhhuuy@gmail.com",
-    //   firstName: "yyy",
-    //   gender: 1,
-    //   password: "hihi",
-    //   surname: "huynh",
-    // });
-    // console.log("🚀 ~ onSignUp ~ data:", data);
+  const [data, setData] = useState({});
+  const [loadingRegister, setLoadingRegister] = useState<boolean>(false);
+
+  const onSignUp = async (value: RegisterParams) => {
+    setLoadingRegister(true);
+    try {
+      const dataRegister = await registerApi(value);
+      if (dataRegister.status === 200) {
+        ShowNotificationToast({
+          type: ToastEnums.success,
+          message: "Register success",
+        });
+        setData(dataRegister);
+      }
+    } catch {
+      setLoadingRegister(false);
+    }
   };
+
+  useEffect(() => {
+    setLoadingRegister(false);
+  }, [data]);
+
   return (
-    // <StoreProvider>
     <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%] sm:block sm:px-4">
       <div className="flex justify-center pt-[10vh] md:hidden lg:hidden">
         <Image
@@ -119,13 +131,13 @@ const Login = () => {
         show={showModal}
         setShow={(value) => setShowModal(value)}
         onSignUp={onSignUp}
+        isLoading={loadingRegister}
       />
       <FormAddAccount
         show={showModalAddUser}
         setShow={(value) => setShowModalAddUser(value)}
       />
     </div>
-    // </StoreProvider>
   );
 };
 
