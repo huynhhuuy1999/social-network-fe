@@ -27,3 +27,8 @@ export interface RegisterParams {
   birthDate: string;
   gender?: number;
 }
+
+export interface LoginParams {
+  email: string;
+  password: string;
+}

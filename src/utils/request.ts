@@ -74,7 +74,11 @@ const interceptorRequest = async (config: AxiosRequestConfig | any) => {
 
 const interceptorResponse = (response: AxiosResponse) => {
   if (response && response.data) {
-    return { ...response.data, status: response.status };
+    return {
+      ...response.data,
+      status: response.status,
+      message: response.data.message,
+    };
   }
 
   return response;

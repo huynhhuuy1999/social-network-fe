@@ -236,9 +236,7 @@ export const FormCreateUser: React.FC<IFormCreateUser> = ({
           <div className="flex justify-center">
             <button
               className={`${
-                isLoading
-                  ? "pointer-events-none cursor-not-allowed opacity-70"
-                  : ""
+                isLoading ? "disableSpam" : ""
               } flex h-9 w-[194px] items-center justify-center rounded-[6px] bg-[#00a400] text-[18px] font-bold text-white`}
               type="submit"
             >
