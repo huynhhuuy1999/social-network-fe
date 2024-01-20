@@ -32,7 +32,7 @@ const interceptorRequest = async (config: AxiosRequestConfig | any) => {
   let token = getCookie(TOKEN_KEY);
   let webToken = getCookie(WEB_TOKEN_KEY);
   let rfToken = getCookie(REFRESH_TOKEN_KEY);
-
+  console.log("config", config);
   if (config.headers) {
     if (token && webToken) {
       const isExpired = jwtDecode<Token>(token).exp < Date.now() / 1000;
