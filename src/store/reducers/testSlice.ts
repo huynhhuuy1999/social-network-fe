@@ -1,8 +1,4 @@
-import {
-  createSlice,
-  PayloadAction,
-  createDraftSafeSelector,
-} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "..";
 
 export interface testState {

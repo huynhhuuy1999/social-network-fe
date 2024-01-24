@@ -1,7 +1,7 @@
 "use client";
 
 // Library
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 // Component
 import {
   Notification,
@@ -10,13 +10,24 @@ import {
 } from "@/modules/Home/components";
 import { Avatar } from "@/components";
 //Constant
-
 import { TAB_ACTIVE } from "@/constants";
+//Store
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { currentUser, userActions } from "@/store/reducers/userSlice";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [tabActive, setTabActive] = useState<number>(TAB_ACTIVE.HOME);
   const [activeNotification, setActiveNotification] = useState<boolean>(false);
   const [activeAvatar, setActiveAvatar] = useState<boolean>(false);
+
+  const dispatch = useAppDispatch();
+  const currentUserInfo = useAppSelector(currentUser);
+
+  useEffect(() => {
+    if (!currentUserInfo) {
+      dispatch(userActions.fetchCurrentUserRequest({}));
+    }
+  }, []);
 
   const listIcon = useMemo(() => {
     return [

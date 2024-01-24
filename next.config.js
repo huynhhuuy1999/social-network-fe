@@ -5,6 +5,7 @@ const nextConfig = {
     },
     experimental: {
         serverActions: true,
+        esmExternals: false
     },
     typescript: {
         ignoreBuildErrors: true

@@ -1,5 +1,4 @@
 "use client";
-import { isMobile } from "react-device-detect";
 import { HomeModule } from "@/modules/Home";
 
 // import dynamic from "next/dynamic";

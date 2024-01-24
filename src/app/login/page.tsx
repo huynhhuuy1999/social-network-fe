@@ -1,32 +1,33 @@
 "use client";
 // Library
-import { useEffect, useState } from "react";
-import * as yup from "yup";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import * as yup from "yup";
+import { useFormik } from "formik";
 // Enum
 import { ToastEnums } from "@/constants/enum";
 // Hooks
-import { useAppSelector } from "@/hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 // Model
 import { LoginParams, RegisterParams } from "@/models/login";
 // Service
-import { loginApi, registerApi } from "@/services/auth";
+import { registerApi } from "@/services";
 // Util
 import { ShowNotificationToast } from "@/utils/toastNotify";
 // Store
-import { isLoadingSelector } from "@/store/reducers/testSlice";
+import { isLoadingSelector } from "@/store/reducers/authSlice";
+import { authAction } from "@/store/reducers/authSlice";
+import { currentUser } from "@/store/reducers/userSlice";
 // Component
+import { Loader } from "@/components";
+
 import {
   CardAddUser,
   CardUser,
   FormAddAccount,
   FormCreateUser,
 } from "./components";
-import { useFormik } from "formik";
-import { Loader } from "@/components";
-import { setCookie } from "@/utils";
-import { REFRESH_TOKEN_KEY, TOKEN_KEY } from "@/constants/common";
 
 const initialValues = {
   email: "",
@@ -34,16 +35,22 @@ const initialValues = {
 };
 
 const Login = () => {
-  const loading = useAppSelector(isLoadingSelector);
+  const loadingLogin = useAppSelector(isLoadingSelector);
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const [accounts, setAccount] = useState<number[]>([1]);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showModalAddUser, setShowModalAddUser] = useState<boolean>(false);
   const [data, setData] = useState({});
-  const [dataLoginApi, setDataLoginApi] = useState({});
   const [loadingRegister, setLoadingRegister] = useState<boolean>(false);
-  const [loadingLogin, setLoadingLogin] = useState<boolean>(false);
+  const currenInfoUser = useAppSelector(currentUser);
+
+  useEffect(() => {
+    if (currenInfoUser) {
+      router.push("/");
+    }
+  }, [currenInfoUser]);
 
   const yupObject = yup.object({
     email: yup.string().required(),
@@ -75,36 +82,28 @@ const Login = () => {
         setData(dataRegister);
       }
     } catch {
+      ShowNotificationToast({
+        type: ToastEnums.error,
+        message: "Register failed",
+      });
       setLoadingRegister(false);
     }
   };
 
   const onLogin = async (value: LoginParams) => {
-    setLoadingLogin(true);
     try {
-      const dataLogin: any = await loginApi(value);
-      if (dataLogin.status === 200) {
-        ShowNotificationToast({
-          type: ToastEnums.success,
-          message: dataLogin.message,
-        });
-        router.push("/");
-        setCookie(TOKEN_KEY, dataLogin.accessToken);
-        setCookie(REFRESH_TOKEN_KEY, dataLogin.refreshToken);
-        setDataLoginApi(dataLogin);
-      }
+      dispatch(authAction.fetchLoginRequest(value));
     } catch {
-      setLoadingLogin(false);
+      ShowNotificationToast({
+        type: ToastEnums.error,
+        message: "Login failed",
+      });
     }
   };
 
   useEffect(() => {
     setLoadingRegister(false);
   }, [data]);
-
-  useEffect(() => {
-    setLoadingLogin(false);
-  }, [dataLoginApi]);
 
   return (
     <div className="flex h-[100vh] w-full items-center justify-center bg-[#f0f2f5] px-[10%] sm:block sm:px-4">

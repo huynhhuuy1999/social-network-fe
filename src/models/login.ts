@@ -1,3 +1,5 @@
+import { User } from "./personal";
+
 export interface ICardUser {
   userName?: string;
   numNotiUnSeen?: number;
@@ -31,4 +33,11 @@ export interface RegisterParams {
 export interface LoginParams {
   email: string;
   password: string;
+}
+
+export interface LoginResponse {
+  accessToken?: string;
+  infoUser?: User;
+  message?: string;
+  refreshToken?: string;
 }
