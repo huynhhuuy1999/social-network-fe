@@ -19,7 +19,7 @@ enum REQUEST_TIMEOUT {
 }
 
 const request = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_DEV_APP_API_URL,
+  baseURL: process.env.NEXT_PUBLIC_APP_API_URL,
   timeout: REQUEST_TIMEOUT.default,
 });
 
