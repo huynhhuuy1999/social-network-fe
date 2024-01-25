@@ -1,5 +1,4 @@
 "use client";
-
 // Library
 import { ReactNode, useEffect, useMemo, useState } from "react";
 // Component
@@ -13,7 +12,7 @@ import { Avatar } from "@/components";
 import { TAB_ACTIVE } from "@/constants";
 //Store
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { currentUser, userActions } from "@/store/reducers/userSlice";
+import { authAction, currentUser } from "@/store/reducers/authSlice";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [tabActive, setTabActive] = useState<number>(TAB_ACTIVE.HOME);
@@ -25,7 +24,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (!currentUserInfo) {
-      dispatch(userActions.fetchCurrentUserRequest({}));
+      dispatch(authAction.fetchCurrentUserRequest({}));
     }
   }, []);
 

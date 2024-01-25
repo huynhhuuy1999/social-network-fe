@@ -4,6 +4,8 @@ import { CardItemSidebar } from "../CardItemSidebar";
 import { Avatar } from "@/components";
 import { ListOptionHeader } from "@/constants";
 import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/hooks";
+import { authAction } from "@/store/reducers/authSlice";
 
 export const OptionOnHeader: React.FC<IOptionModal> = ({
   isShow,
@@ -11,6 +13,7 @@ export const OptionOnHeader: React.FC<IOptionModal> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const route = useRouter();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (isShow) {
@@ -26,6 +29,10 @@ export const OptionOnHeader: React.FC<IOptionModal> = ({
       };
     }
   }, [ref, isShow]);
+
+  const logout = () => {
+    dispatch(authAction.logout());
+  };
 
   return (
     <div
@@ -62,7 +69,10 @@ export const OptionOnHeader: React.FC<IOptionModal> = ({
             arrowRight={value?.arrowRight}
             classNameIcon="!h-5 aspect-square"
             stylesIcon={{ filter: "invert(89%) sepia(6%) hue-rotate(185deg)" }}
-            onClick={() => route.push(value.link)}
+            onClick={() => {
+              route.push(value.link);
+              if (value.name === "Đăng xuất") logout();
+            }}
           />
         );
       })}

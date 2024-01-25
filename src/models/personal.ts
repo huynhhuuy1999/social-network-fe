@@ -14,6 +14,7 @@ export interface User {
   surname?: string;
   birthDate?: string;
   gender?: number;
+  id?: string;
 }
 
 export interface UserParams {

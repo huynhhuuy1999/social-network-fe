@@ -41,3 +41,7 @@ export interface LoginResponse {
   message?: string;
   refreshToken?: string;
 }
+
+export interface RefreshTokenResponse {
+  accessToken?: string;
+}

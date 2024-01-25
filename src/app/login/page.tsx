@@ -16,9 +16,8 @@ import { registerApi } from "@/services";
 // Util
 import { ShowNotificationToast } from "@/utils/toastNotify";
 // Store
-import { isLoadingSelector } from "@/store/reducers/authSlice";
+import { currentUser, isLoadingSelector } from "@/store/reducers/authSlice";
 import { authAction } from "@/store/reducers/authSlice";
-import { currentUser } from "@/store/reducers/userSlice";
 // Component
 import { Loader } from "@/components";
 

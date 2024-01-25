@@ -7,11 +7,14 @@ import { SIDEBAR_HOME_ADVANCED, SIDEBAR_HOME_DEFAULT } from "@/constants";
 //Component
 import { Avatar, SideBar } from "@/components";
 import { CardItemSidebar } from "../CardItemSidebar";
+// Store
+import { useAppSelector } from "@/hooks";
+import { currentUser } from "@/store/reducers/authSlice";
 
 export const SideBarLeft = () => {
   const route = useRouter();
   const [isMore, setIsMore] = useState<boolean>(false);
-
+  const currentInfoUser = useAppSelector(currentUser);
   return (
     <SideBar className="left-0 mt-2">
       <div>
@@ -24,9 +27,13 @@ export const SideBarLeft = () => {
               className="mr-3"
             />
           }
-          name={"Huỳnh Hữu Ý"}
+          name={
+            currentInfoUser
+              ? `${currentInfoUser?.firstName} ${currentInfoUser?.surname}`
+              : ""
+          }
           link=""
-          onClick={() => route.push("/huynhhuuy1999")}
+          onClick={() => route.push(currentInfoUser?.id || "")}
         />
         {SIDEBAR_HOME_DEFAULT.map((value, key) => {
           return (

@@ -43,9 +43,9 @@ const interceptorRequest = async (config: AxiosRequestConfig | any) => {
           });
 
         try {
-          const response: any = await refreshTokenRequest;
-          token = response.accessToken;
-          setCookie(TOKEN_KEY, response.accessToken);
+          const response = await refreshTokenRequest;
+          token = response?.data?.accessToken;
+          setCookie(TOKEN_KEY, token);
           setCookie(REFRESH_TOKEN_KEY, rfToken);
           refreshTokenRequest = null;
         } catch (_error) {
