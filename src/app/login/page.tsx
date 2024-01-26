@@ -161,6 +161,7 @@ const Login = () => {
               className={`mb-[10px] w-[330px] rounded-[6px] border border-[#dddfe2] px-[14px] py-[16px] text-[17px] text-dark-primary caret-[#1b74e4] shadow-md shadow-[#e7f3ff] focus:outline-[#1b74e4] sm:w-[90%] sm:px-3 sm:py-3 sm:text-15 ${
                 touched && errors && errors.email ? "border-error" : ""
               }`}
+              autoFocus
             />
             <div className="relative flex w-full justify-center">
               <input

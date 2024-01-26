@@ -17,7 +17,6 @@ function* logInWithCredentials(payload: LoginParams): any {
       loginApi,
       payload,
     );
-
     if (resp && !resp.isError) {
       const dateExpireCookie = 7;
       setCookie(TOKEN_KEY, resp.data.accessToken, dateExpireCookie);
@@ -30,6 +29,10 @@ function* logInWithCredentials(payload: LoginParams): any {
       yield call(getCurrentUser);
     }
   } catch (error) {
+    ShowNotificationToast({
+      type: ToastEnums.error,
+      message: "Login failed",
+    });
     yield put(authAction.fetchLoginFailed());
   }
 }
@@ -67,7 +70,9 @@ function* getCurrentUser(): any {
     if (resp && !resp.isError) {
       yield put(authAction.fetchCurrentUserSuccess(resp.data));
     }
-  } catch (error) {}
+  } catch (error) {
+    yield put(authAction.fetchCurrentUserFailed());
+  }
 }
 
 export default function* authSaga() {

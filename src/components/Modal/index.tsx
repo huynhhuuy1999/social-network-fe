@@ -31,6 +31,15 @@ export const Modal: React.FC<IModal> = ({
       };
     }
   }, [ref, show]);
+
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [show]);
+
   return mounted
     ? createPortal(
         <>

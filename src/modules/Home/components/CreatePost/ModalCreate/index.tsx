@@ -28,8 +28,6 @@ export const ModalCreate: React.FC<IModalCreate> = ({ setShow, show }) => {
       setShow={(value) => setShow?.(value)}
       backgroundColorOverlay="transparent"
       className="max-h-[80vh] !bg-dark-primary"
-      width={"100%"}
-      // height={"80vh"}
     >
       <div className="max-h-[80vh] min-h-[428px] w-[500px] rounded-lg border border-devider sm:h-auto sm:min-h-[360px] sm:w-full">
         <div className="flex items-center justify-center py-4">
