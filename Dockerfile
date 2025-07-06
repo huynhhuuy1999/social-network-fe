@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . .
 RUN yarn install
 CMD ["yarn", "run", "dev"]
-EXPOSE 3000
+#yêu cầu mở cổng 3001 trong container nhưng vẫn không ảnh hưởng nếu app vẫn chạy port 3000
+EXPOSE 3001 
